@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Voice Agent Demo Hub | Collab Create Marketing</title>
+    <meta name="description" content="Experience CCM's AI voice agent simulator. Test live conversational scenarios, observe real-time CRM payload extraction, and request a bespoke demonstration for your business.">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Live Voice Agent Demo Hub | Collab Create Marketing">
+    <meta property="og:description" content="Experience realistic human-like voice conversational speed, natural interruption handling, and structured CRM data extraction.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../../CCM_Assets/ai-voice-agents.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">
+                <img src="../../CCM_Assets/logo.svg" alt="Collab Create Marketing">
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../solutions/ai-voice-agents/">AI Voice Agents</a></li>
+                <li><a href="../../how-it-works/">How It Works</a></li>
+                <li><a href="../../industries/">Industries</a></li>
+                <li><a href="../../demo/voice-agent/" style="color:var(--accent-color);font-weight:700;">Live Demo</a></li>
+                <li class="has-dropdown">
+                    <a href="../../business-solutions/">Solutions</a>
+                    <ul class="dropdown wide">
+                        <li><span class="dropdown-label">Voice &amp; Call Solutions</span></li>
+                        <li><a href="../../solutions/ai-voice-agents/"><strong>AI Voice Agents (Core)</strong></a></li>
+                        <li><a href="../../how-it-works/">Managed Implementation Process</a></li>
+                        <li><a href="../../industries/">Industry Workflows &amp; Cases</a></li>
+                        <li><a href="../../demo/voice-agent/">Interactive Voice Demo</a></li>
+                        <li><span class="dropdown-label">Digital &amp; Conversion</span></li>
+                        <li><a href="../../solutions/websites-digital/">Websites &amp; Digital</a></li>
+                        <li><a href="../../free-demo/">Free Website Demo</a></li>
+                        <li><a href="../../premium-website/">Premium Custom Website</a></li>
+                        <li><a href="../../review-system/">Customer Review System</a></li>
+                        <li><a href="../../growth-system/">Growth &amp; Booking System</a></li>
+                        <li><a href="../../client-acquisition/">Client Acquisition</a></li>
+                        <li><span class="dropdown-label">Commercial Portfolio</span></li>
+                        <li><a href="../../business-solutions/">All Business Solutions</a></li>
+                        <li><a href="../../solutions/business-energy/">Business Energy</a></li>
+                        <li><a href="../../solutions/business-broadband/">Business Broadband</a></li>
+                        <li><a href="../../solutions/card-payments/">Card Payments</a></li>
+                        <li><a href="../../solutions/business-funding/">Business Funding</a></li>
+                        <li><a href="../../solutions/branded-products/">Branded Supplies</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../about/">About</a></li>
+                <li class="has-dropdown">
+                    <a href="../../sales-partners/">Partners</a>
+                    <ul class="dropdown">
+                        <li><a href="../../sales-partners/">Sales Partner Network</a></li>
+                        <li><a href="../../careers/">Sales Representative Role</a></li>
+                        <li><a href="../../careers/apply/">Apply Now</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../contact/">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#request-prototype" class="btn btn-primary">Request Prototype</a>
+            </div>
+            <button class="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-hero" style="padding-bottom:2rem;">
+        <div class="container reveal" style="max-width:920px;text-align:center;margin:0 auto;">
+            <span class="badge-pill"><span class="status-dot"></span> Interactive Technology Preview</span>
+            <h1>Experience conversational voice AI in action.</h1>
+            <p class="lead" style="margin-left:auto;margin-right:auto;">Test our interactive dialogue simulator across three representative commercial environments. Observe sub-600ms conversational pacing, accurate trade comprehension, and instant CRM data structuring.</p>
+        </div>
+    </header>
+
+    <!-- Interactive Simulator Section -->
+    <section style="padding-top:1rem;">
+        <div class="container">
+            <div class="demo-console-box reveal" id="voiceDemoConsole">
+                <div class="demo-console-header">
+                    <div class="demo-console-status">
+                        <span class="status-dot"></span>
+                        <span>Collab Create Voice Intelligence Engine — Live Simulation</span>
+                    </div>
+                    <div class="audio-bars-wrapper" title="Voice Channel Active">
+                        <div class="audio-bar"></div>
+                        <div class="audio-bar"></div>
+                        <div class="audio-bar"></div>
+                        <div class="audio-bar"></div>
+                        <div class="audio-bar"></div>
+                        <div class="audio-bar"></div>
+                        <div class="audio-bar"></div>
+                    </div>
+                </div>
+
+                <div class="demo-console-body">
+                    <div>
+                        <div style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;font-weight:700;margin-bottom:0.75rem;">Select Real-World Scenario:</div>
+                        <div class="scenario-pills">
+                            <button class="scenario-pill-btn active" data-scenario="booking">1. After-Hours Booking (Salon / Clinic)</button>
+                            <button class="scenario-pill-btn" data-scenario="emergency">2. Urgent Triage (Plumbing / Trade)</button>
+                            <button class="scenario-pill-btn" data-scenario="pricing">3. Routine Pricing (Garage / Auto)</button>
+                        </div>
+
+                        <div class="transcript-display">
+                            <!-- Populated dynamically via script.js -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="demo-data-extracted">
+                            <!-- Populated dynamically via script.js -->
+                        </div>
+
+                        <div class="provider-placeholder-box">
+                            <p style="margin-bottom:0.5rem;"><strong>Ready to test with your own company phone?</strong></p>
+                            <p style="font-size:0.85rem;color:#94a3b8;margin-bottom:1rem;">We can configure a private sandbox number that answers as your business so you can call it from your mobile and test edge cases live.</p>
+                            <a href="#request-prototype" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1.25rem;">Request Custom Phone Sandbox →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Performance Benchmarks -->
+            <div class="grid-4 reveal" style="gap:1.5rem;margin-top:3rem;">
+                <div class="stat-card" style="padding:1.5rem;border-radius:10px;background:var(--card-bg);border:1px solid var(--border-color);text-align:center;">
+                    <div style="font-size:2rem;font-weight:800;color:var(--accent-color);">&lt; 600ms</div>
+                    <div style="font-size:0.9rem;font-weight:600;color:var(--text-color);margin-top:0.25rem;">Speech-to-Speech Latency</div>
+                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0.5rem 0 0;">Zero awkward dead air; callers experience continuous natural conversational flow.</p>
+                </div>
+                <div class="stat-card" style="padding:1.5rem;border-radius:10px;background:var(--card-bg);border:1px solid var(--border-color);text-align:center;">
+                    <div style="font-size:2rem;font-weight:800;color:#10b981;">100%</div>
+                    <div style="font-size:0.9rem;font-weight:600;color:var(--text-color);margin-top:0.25rem;">Interruption Tolerance</div>
+                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0.5rem 0 0;">Callers can interject or change their mind mid-sentence; the agent yields gracefully.</p>
+                </div>
+                <div class="stat-card" style="padding:1.5rem;border-radius:10px;background:var(--card-bg);border:1px solid var(--border-color);text-align:center;">
+                    <div style="font-size:2rem;font-weight:800;color:var(--accent-color);">UK Calibrated</div>
+                    <div style="font-size:0.9rem;font-weight:600;color:var(--text-color);margin-top:0.25rem;">Accents &amp; Postcodes</div>
+                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0.5rem 0 0;">High accuracy on British postcodes (SW11, M1, B1), UK vehicle registrations, and regional phrasing.</p>
+                </div>
+                <div class="stat-card" style="padding:1.5rem;border-radius:10px;background:var(--card-bg);border:1px solid var(--border-color);text-align:center;">
+                    <div style="font-size:2rem;font-weight:800;color:#10b981;">ISO/GDPR</div>
+                    <div style="font-size:0.9rem;font-weight:600;color:var(--text-color);margin-top:0.25rem;">Data Redaction</div>
+                    <p style="font-size:0.8rem;color:var(--text-muted);margin:0.5rem 0 0;">Call transcripts redact payment credentials and sensitive health data automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture & Adapter Documentation -->
+    <section class="section-alt">
+        <div class="container reveal">
+            <div class="section-intro centered">
+                <span class="section-label">Enterprise Architecture</span>
+                <h2>Clean separation between voice layer and business logic.</h2>
+                <p>We do not lock your company into fragile proprietary walled gardens. Our telephony adapters connect seamlessly to industry standard voice backends and your existing CRM.</p>
+            </div>
+
+            <div class="grid-2" style="gap:2.5rem;align-items:center;margin-top:3rem;">
+                <div>
+                    <h3 style="font-size:1.5rem;margin-bottom:1rem;">How the Live Voice Stack Operates</h3>
+                    <p style="color:var(--text-muted);line-height:1.6;font-size:0.95rem;margin-bottom:1.5rem;">
+                        A live voice call involves four synchronized processing engines operating under strict latency constraints:
+                    </p>
+
+                    <div style="display:flex;flex-direction:column;gap:1rem;">
+                        <div style="display:flex;gap:1rem;align-items:flex-start;">
+                            <div style="width:32px;height:32px;border-radius:50%;background:rgba(30,58,138,0.1);color:var(--accent-color);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">1</div>
+                            <div>
+                                <strong style="color:var(--text-color);font-size:0.95rem;">Voice Activity Detection &amp; Streaming STT</strong>
+                                <p style="font-size:0.85rem;color:var(--text-muted);margin:0.25rem 0 0;">Deepgram Nova-2 / Whisper engines transcribe British phonemes in under 150ms.</p>
+                            </div>
+                        </div>
+
+                        <div style="display:flex;gap:1rem;align-items:flex-start;">
+                            <div style="width:32px;height:32px;border-radius:50%;background:rgba(30,58,138,0.1);color:var(--accent-color);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">2</div>
+                            <div>
+                                <strong style="color:var(--text-color);font-size:0.95rem;">Guardrailed Reasoning Engine (LLM)</strong>
+                                <p style="font-size:0.85rem;color:var(--text-muted);margin:0.25rem 0 0;">Claude 3.5 Sonnet / GPT-4o parses intent, cross-references your knowledge base, and executes tools.</p>
+                            </div>
+                        </div>
+
+                        <div style="display:flex;gap:1rem;align-items:flex-start;">
+                            <div style="width:32px;height:32px;border-radius:50%;background:rgba(30,58,138,0.1);color:var(--accent-color);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">3</div>
+                            <div>
+                                <strong style="color:var(--text-color);font-size:0.95rem;">Ultra-Low-Latency TTS Synthesis</strong>
+                                <p style="font-size:0.85rem;color:var(--text-muted);margin:0.25rem 0 0;">Cartesia Sonic / ElevenLabs Turbo generates natural British voice inflection in under 120ms.</p>
+                            </div>
+                        </div>
+
+                        <div style="display:flex;gap:1rem;align-items:flex-start;">
+                            <div style="width:32px;height:32px;border-radius:50%;background:rgba(30,58,138,0.1);color:var(--accent-color);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">4</div>
+                            <div>
+                                <strong style="color:var(--text-color);font-size:0.95rem;">Telephony &amp; CRM Webhook Dispatch</strong>
+                                <p style="font-size:0.85rem;color:var(--text-muted);margin:0.25rem 0 0;">Twilio SIP trunks, Retell, or Vapi WebRTC connect directly to your CRM API via webhook payloads.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div style="background:#0b1120;border:1px solid #1e293b;border-radius:12px;padding:1.5rem;box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;border-bottom:1px solid #1e293b;padding-bottom:0.75rem;">
+                            <span style="font-family:monospace;font-size:0.8rem;color:#38bdf8;">// Provider Adapter Architecture</span>
+                            <span style="font-size:0.75rem;background:#1e293b;color:#a7f3d0;padding:0.2rem 0.5rem;border-radius:4px;">WebRTC / SIP Ready</span>
+                        </div>
+<pre style="margin:0;font-family:monospace;font-size:0.82rem;line-height:1.6;color:#94a3b8;overflow-x:auto;">
+<span style="color:#64748b;">// Mount live WebRTC client to CCM demo container</span>
+<span style="color:#e2e8f0;">window</span>.<span style="color:#38bdf8;">CCMVoiceDemoAdapter</span> = {
+  <span style="color:#fde047;">provider</span>: <span style="color:#a7f3d0;">"Retell | Vapi | ElevenLabs"</span>,
+  <span style="color:#fde047;">status</span>: <span style="color:#a7f3d0;">"connected"</span>,
+  
+  <span style="color:#38bdf8;">startCall</span>: <span style="color:#93c5fd;">async</span> (<span style="color:#cbd5e1;">agentId, options</span>) =&gt; {
+    <span style="color:#64748b;">// Initializes microphone stream &amp; WebRTC session</span>
+    <span style="color:#93c5fd;">const</span> session = <span style="color:#93c5fd;">await</span> TelephonyEngine.<span style="color:#38bdf8;">connect</span>({
+      agentId,
+      sampleRate: <span style="color:#f87171;">24000</span>,
+      onTranscript: (<span style="color:#cbd5e1;">chunk</span>) =&gt; updateTranscript(chunk),
+      onToolCall: (<span style="color:#cbd5e1;">tool</span>) =&gt; syncCRM(tool.payload)
+    });
+    <span style="color:#93c5fd;">return</span> session;
+  },
+
+  <span style="color:#38bdf8;">endCall</span>: () =&gt; {
+    TelephonyEngine.<span style="color:#38bdf8;">hangup</span>();
+    triggerFollowUpSMS();
+  }
+};
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Custom Prototype Form (Form 2) -->
+    <section id="request-prototype">
+        <div class="container reveal" style="max-width:840px;margin:0 auto;">
+            <div class="section-intro centered">
+                <span class="section-label">Form 2: Bespoke Prototype</span>
+                <h2>Request a custom voice agent demonstration for your firm.</h2>
+                <p>Provide your business details and common call types. We will construct a working sandbox agent using your service menu, FAQs, and tone of voice so you can dial in and test it yourself.</p>
+            </div>
+
+            <div class="feature-card" style="border:1px solid var(--border-color);padding:2.5rem;border-radius:12px;background:var(--card-bg);margin-top:2.5rem;box-shadow:0 15px 35px rgba(0,0,0,0.06);">
+                <form data-ccm-form="prototype" data-redirect="../../contact/success/">
+                    <input type="hidden" name="access_key" value="5bba1f84-9bcb-4985-857f-299ad8315b75">
+                    <input type="hidden" name="subject" value="New CCM Custom Voice Prototype Request">
+                    <input type="hidden" name="from_name" value="CCM Voice Demo Hub">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+                    <div class="grid-2" style="gap:1.5rem;">
+                        <div class="form-group">
+                            <label for="proto_name">Your Full Name *</label>
+                            <input type="text" id="proto_name" name="name" required placeholder="e.g. David Richardson" class="form-control">
+                            <div class="field-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proto_company">Business / Company Name *</label>
+                            <input type="text" id="proto_company" name="company" required placeholder="e.g. Richardson &amp; Co Mechanical" class="form-control">
+                            <div class="field-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="gap:1.5rem;margin-top:1.25rem;">
+                        <div class="form-group">
+                            <label for="proto_phone">Direct Phone Number (Where you'll test the call) *</label>
+                            <input type="tel" id="proto_phone" name="phone" required placeholder="e.g. 07911 123456" class="form-control">
+                            <div class="field-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proto_email">Work Email Address *</label>
+                            <input type="email" id="proto_email" name="email" required placeholder="david@richardsonmech.co.uk" class="form-control">
+                            <div class="field-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="gap:1.5rem;margin-top:1.25rem;">
+                        <div class="form-group">
+                            <label for="proto_industry">Your Industry Sector *</label>
+                            <select id="proto_industry" name="industry" required class="form-control">
+                                <option value="" disabled selected>Select your industry</option>
+                                <option value="trades">Trades &amp; Home Services (Plumbing, Electrical, HVAC, Roofing)</option>
+                                <option value="automotive">Automotive (Garages, MOT, Tyres, Bodyshop)</option>
+                                <option value="salons">Salons, Barbers &amp; Aesthetic Clinics</option>
+                                <option value="healthcare">Private Healthcare, Dental &amp; Specialist Clinics</option>
+                                <option value="hospitality">Hospitality, Dining &amp; Private Venue Hire</option>
+                                <option value="professional">Professional, Legal &amp; Financial Services</option>
+                                <option value="other">Other Commercial Business</option>
+                            </select>
+                            <div class="field-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proto_calls">Approximate Monthly Inbound Calls</label>
+                            <select id="proto_calls" name="call_volume" class="form-control">
+                                <option value="under_100">Under 100 calls / month</option>
+                                <option value="100_300">100 - 300 calls / month</option>
+                                <option value="300_750">300 - 750 calls / month</option>
+                                <option value="750_plus">750+ calls / month</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top:1.25rem;">
+                        <label for="proto_notes">What specific calls or inquiries do you want the agent to handle? *</label>
+                        <textarea id="proto_notes" name="call_handling_requirements" rows="3" required placeholder="e.g. We get lots of out-of-hours boiler breakdown calls and people asking for MOT quotes while mechanics are busy. We use ServiceM8 for jobs." class="form-control"></textarea>
+                        <div class="field-error"></div>
+                    </div>
+
+                    <div class="form-group" style="margin-top:1.25rem;">
+                        <label style="display:flex;align-items:flex-start;gap:0.75rem;font-size:0.875rem;color:var(--text-muted);cursor:pointer;">
+                            <input type="checkbox" name="consent" required style="margin-top:0.25rem;">
+                            <span>I agree to Collab Create Marketing contacting me with prototype access details and scheduling an operational walk-through.</span>
+                        </label>
+                        <div class="field-error"></div>
+                    </div>
+
+                    <div class="form-status" style="margin-top:1rem;"></div>
+
+                    <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1.5rem;padding:0.9rem 1.5rem;font-size:1.05rem;">
+                        Build My Custom Prototype &amp; Sandbox Number →
+                    </button>
+                    <p style="text-align:center;font-size:0.8rem;color:var(--text-muted);margin-top:0.75rem;">
+                        🔒 No software installation required. Typical turnaround for a custom prototype is 1-2 business days.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Technical FAQ -->
+    <section class="section-alt">
+        <div class="container reveal" style="max-width:840px;margin:0 auto;">
+            <div class="section-intro centered">
+                <span class="section-label">Technical &amp; Operational FAQ</span>
+                <h2>Frequently asked questions about voice AI capabilities.</h2>
+            </div>
+
+            <div class="faq-accordion" style="margin-top:2.5rem;display:flex;flex-direction:column;gap:1.25rem;">
+                <details class="faq-item" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:8px;padding:1.25rem;">
+                    <summary style="font-weight:700;font-size:1.05rem;cursor:pointer;color:var(--text-color);">
+                        Can callers tell that it is an AI voice agent?
+                    </summary>
+                    <p style="margin-top:0.75rem;color:var(--text-muted);font-size:0.95rem;line-height:1.6;">
+                        Our voice models operate with sub-600ms latency, natural British speech cadence, and context-aware pauses. Callers immediately notice how prompt and helpful the response is. We also recommend full transparency: having the agent introduce itself as your automated assistant creates trust while setting caller expectations for quick, accurate service.
+                    </p>
+                </details>
+
+                <details class="faq-item" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:8px;padding:1.25rem;">
+                    <summary style="font-weight:700;font-size:1.05rem;cursor:pointer;color:var(--text-color);">
+                        What happens if a caller interrupts or talks over the agent?
+                    </summary>
+                    <p style="margin-top:0.75rem;color:var(--text-muted);font-size:0.95rem;line-height:1.6;">
+                        Unlike legacy IVR ("Press 1 for Sales") systems, our voice engine features full-duplex Voice Activity Detection. If a caller says "Wait, actually it’s a different postcode," the agent stops speaking immediately, absorbs the correction, and adapts the response without restart or hesitation.
+                    </p>
+                </details>
+
+                <details class="faq-item" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:8px;padding:1.25rem;">
+                    <summary style="font-weight:700;font-size:1.05rem;cursor:pointer;color:var(--text-color);">
+                        How does the system handle complex or unexpected questions?
+                    </summary>
+                    <p style="margin-top:0.75rem;color:var(--text-muted);font-size:0.95rem;line-height:1.6;">
+                        We implement strict guardrails. The agent only speaks on confirmed business policies, services, and approved ranges. When faced with an out-of-scope query, it politely acknowledges the request, captures the details, and transfers the caller to an on-duty staff member or flags an urgent callback ticket.
+                    </p>
+                </details>
+
+                <details class="faq-item" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:8px;padding:1.25rem;">
+                    <summary style="font-weight:700;font-size:1.05rem;cursor:pointer;color:var(--text-color);">
+                        Can the agent dial out for appointment reminders or lapsed customer recalls?
+                    </summary>
+                    <p style="margin-top:0.75rem;color:var(--text-muted);font-size:0.95rem;line-height:1.6;">
+                        Yes. Outbound workflows are deployed strictly within agreed commercial parameters: service due reminders (e.g. annual boiler service or MOT due date), appointment confirmation calls, and follow-ups on web enquiry form submissions within 60 seconds.
+                    </p>
+                </details>
+
+                <details class="faq-item" style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:8px;padding:1.25rem;">
+                    <summary style="font-weight:700;font-size:1.05rem;cursor:pointer;color:var(--text-color);">
+                        How quickly can our company be up and running?
+                    </summary>
+                    <p style="margin-top:0.75rem;color:var(--text-muted);font-size:0.95rem;line-height:1.6;">
+                        A typical managed implementation takes 7 to 10 business days from discovery to live deployment. This allows sufficient time for rigorous scenario stress testing, CRM webhook validation, and staff training before connecting live phone traffic.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo">
+                    <p class="tagline">Managed AI voice agents and commercial business systems for UK companies.</p>
+                    <p style="font-size:0.875rem;margin-top:1rem;color:var(--text-muted);">
+                        Direct Enquiries: <a href="mailto:Collabcreatemarketing@gmail.com" style="color:var(--accent-color);font-weight:600;">Collabcreatemarketing@gmail.com</a>
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <span class="group-title">AI Voice Services</span>
+                        <a href="../../solutions/ai-voice-agents/">AI Voice Agents (Sales)</a>
+                        <a href="../../how-it-works/">How It Works &amp; Management</a>
+                        <a href="../../industries/">Industries &amp; Use Cases</a>
+                        <a href="../../demo/voice-agent/">Interactive Live Demo</a>
+                        <a href="../../contact/#consultation">Book Consultation</a>
+                    </div>
+                    <div class="link-group">
+                        <span class="group-title">Digital &amp; Growth</span>
+                        <a href="../../solutions/websites-digital/">Websites &amp; Digital</a>
+                        <a href="../../free-demo/">Free Website Demo</a>
+                        <a href="../../premium-website/">Premium Custom Website</a>
+                        <a href="../../review-system/">Customer Review System</a>
+                        <a href="../../growth-system/">Growth &amp; Booking System</a>
+                        <a href="../../client-acquisition/">Client Acquisition</a>
+                    </div>
+                    <div class="link-group">
+                        <span class="group-title">Business Solutions</span>
+                        <a href="../../business-solutions/">All Business Solutions</a>
+                        <a href="../../solutions/business-energy/">Business Energy</a>
+                        <a href="../../solutions/business-broadband/">Business Broadband</a>
+                        <a href="../../solutions/card-payments/">Card Payments</a>
+                        <a href="../../solutions/business-funding/">Business Funding</a>
+                        <a href="../../solutions/branded-products/">Branded Supplies</a>
+                    </div>
+                    <div class="link-group">
+                        <span class="group-title">Company &amp; Network</span>
+                        <a href="../../about/">About CCM</a>
+                        <a href="../../sales-partners/">Sales Partner Network</a>
+                        <a href="../../careers/">Sales Representative Role</a>
+                        <a href="../../careers/apply/">Apply Now</a>
+                        <a href="../../contact/">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Collab Create Marketing. All rights reserved. Registered UK commercial agency.</p>
+                <div class="legal-links">
+                    <a href="../../contact/">Privacy &amp; Data Handling</a>
+                    <a href="../../contact/">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
