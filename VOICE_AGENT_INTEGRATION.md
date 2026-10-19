@@ -52,11 +52,52 @@ For businesses with existing PBX systems (3CX, RingCentral, 8x8, Asterisk), CCM 
 
 ---
 
-## 3. WebRTC Provider Adapter Specification
+## 3. Grok Voice (xAI) — Live Browser Demo
+
+The homepage and `/demo/voice-agent/` include a **Talk live with Grok** panel powered by xAI’s Speech-to-Speech Realtime API (`grok-voice-latest`).
+
+### Why a Worker is required
+
+GitHub Pages is static. Browsers must **never** receive your xAI API key. Instead:
+
+1. Create an API key in [console.x.ai](https://console.x.ai) (API Keys).
+2. Optionally create a Voice Agent in **Voice Agents (Beta)** for telephony later.
+3. Deploy `workers/xai-session/` (Cloudflare Worker) with secret `XAI_API_KEY`.
+4. Set the public Worker URL in `config.xai.js`:
+
+```js
+window.CCM_XAI_TOKEN_URL = 'https://ccm-xai-session.YOUR_SUBDOMAIN.workers.dev/session';
+```
+
+5. Hard-refresh the site. Click **Start Live Voice Demo** and allow the microphone.
+
+### Deploy the token worker
+
+```bash
+cd workers/xai-session
+npx wrangler deploy
+npx wrangler secret put XAI_API_KEY
+# optional CORS lock-down:
+npx wrangler secret put ALLOWED_ORIGIN
+# value: https://collabcreatemarketing.com,https://www.collabcreatemarketing.com
+```
+
+The Worker calls `POST https://api.x.ai/v1/realtime/client_secrets` and returns a short-lived `value` token. The browser then opens:
+
+`wss://api.x.ai/v1/realtime?model=grok-voice-latest`  
+with protocol `xai-client-secret.<token>`.
+
+### Credits
+
+Ensure the xAI team has billing credits (**Add credits** in the console) or live sessions will fail after connect.
+
+---
+
+## 4. WebRTC Provider Adapter Specification
 
 The frontend demo showroom (`demo/voice-agent/`) implements a standardized interface: `window.CCMVoiceDemoAdapter`.
 
-To attach a live voice provider (e.g. Vapi, Retell, ElevenLabs) to the web interface without altering page layout:
+To attach an additional live voice provider (e.g. Vapi, Retell, ElevenLabs) alongside Grok:
 
 ```javascript
 window.CCMVoiceDemoAdapter = {
@@ -105,7 +146,7 @@ window.CCMVoiceDemoAdapter = {
 
 ---
 
-## 4. CRM & Calendar Webhook Schemas
+## 5. CRM & Calendar Webhook Schemas
 
 At the conclusion of each call, the conversational intelligence engine emits a structured JSON webhook payload to the configured CRM endpoint.
 
@@ -149,7 +190,7 @@ At the conclusion of each call, the conversational intelligence engine emits a s
 
 ---
 
-## 5. Web3Forms Lead Capture Configuration
+## 6. Web3Forms Lead Capture Configuration
 
 All website forms on `collabcreatemarketing.com` utilize Web3Forms with native postbacks and client-side validation:
 
@@ -162,7 +203,7 @@ All website forms on `collabcreatemarketing.com` utilize Web3Forms with native p
 
 ---
 
-## 6. Compliance, GDPR & Quality Assurance
+## 7. Compliance, GDPR & Quality Assurance
 
 1. **Explicit Identification:** By default, every agent greets callers with a clear operational disclaimer: *"Hello, you've reached [Business Name]'s automated booking assistant..."*
 2. **PCI-DSS Compliance:** Voice agents are strictly restricted from transcribing 16-digit credit card PANs over audio. If a payment is required (e.g. salon deposit or call-out fee), the agent triggers an automated, secure Stripe/SumUp SMS payment link to the caller's mobile.

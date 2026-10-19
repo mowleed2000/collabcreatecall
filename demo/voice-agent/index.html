@@ -103,6 +103,30 @@
                 </div>
             </div>
 
+            <!-- Live Grok Voice Demo -->
+            <div class="grok-live-demo reveal" id="live-grok-demo" data-grok-demo style="margin-top:3rem;">
+                <div class="grok-demo-header">
+                    <div class="grok-demo-badge"><span class="status-dot"></span> Live · Grok Voice (xAI)</div>
+                    <div class="grok-status-pill" data-grok-status data-state="idle">Ready</div>
+                </div>
+                <div class="grok-demo-copy">
+                    <h3>Speak with the live Grok voice bot</h3>
+                    <p>This is a real browser microphone session against xAI’s Grok Voice API — not a pre-recorded clip. Use it to feel conversational latency, interruption handling, and UK-business tone before we wire the same stack to your phone number.</p>
+                </div>
+                <div class="grok-controls">
+                    <button type="button" class="btn btn-grok-start" data-grok-start>Start Live Voice Demo</button>
+                    <button type="button" class="btn btn-grok-end" data-grok-end hidden>End Call</button>
+                    <a href="#request-prototype" class="btn btn-outline" style="border-color:rgba(125,211,252,0.45);color:#7dd3fc;">Request phone sandbox</a>
+                </div>
+                <div class="grok-transcript" data-grok-transcript>
+                    <p style="color:#64748b;margin:0;font-size:0.9rem;">Your live conversation transcript will appear here.</p>
+                </div>
+                <p class="grok-hint">Allow microphone access when prompted. Ask about missed-call recovery, bookings, or emergency triage. For production phone demos, request a custom sandbox number below.</p>
+                <div class="grok-setup-note" data-grok-setup-note hidden>
+                    To go fully live: create an API key in the xAI console, deploy <code>workers/xai-session</code> with that key as a secret, then set <code>window.CCM_XAI_TOKEN_URL</code> to the worker URL before <code>script.js</code> loads. See <code>config.xai.example.js</code> and VOICE_AGENT_INTEGRATION.md.
+                </div>
+            </div>
+
             <!-- Technical Performance Benchmarks -->
             <div class="grid-4 reveal" style="gap:1.5rem;margin-top:3rem;">
                 <div class="stat-card" style="padding:1.5rem;border-radius:10px;background:var(--card-bg);border:1px solid var(--border-color);text-align:center;">
@@ -377,54 +401,54 @@
                 <div class="footer-brand">
                     <img src="../../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo">
                     <p class="tagline">Managed AI voice agents for UK businesses. Never miss a high-value customer call again.</p>
-                    <p style="font-size:0.875rem;margin-top:1rem;color:var(--text-muted);">
-                        Direct Enquiries: <a href="mailto:Collabcreatemarketing@gmail.com" style="color:var(--accent-color);font-weight:600;">Collabcreatemarketing@gmail.com</a>
+                    <p class="footer-contact">
+                        Enquiries: <a href="mailto:collabcreatemarketing@gmail.com">collabcreatemarketing@gmail.com</a>
                     </p>
                 </div>
                 <div class="footer-links">
                     <div class="link-group">
-                        <span class="group-title">AI Voice Services</span>
+                        <span class="group-title">Services</span>
                         <a href="../../solutions/ai-voice-agents/">AI Voice Agents</a>
-                        <a href="../../how-it-works/">How It Works &amp; Management</a>
-                        <a href="../../industries/">Industries &amp; Use Cases</a>
-                        <a href="../../demo/voice-agent/">Interactive Live Demo</a>
+                        <a href="../../how-it-works/">How It Works</a>
+                        <a href="../../industries/">Industries</a>
+                        <a href="../../demo/voice-agent/">Live Demo</a>
                         <a href="../../consultation/">Book Consultation</a>
                     </div>
                     <div class="link-group">
-                        <span class="group-title">Industry Blueprints</span>
+                        <span class="group-title">Industries</span>
                         <a href="../../industries/#trades">Trades &amp; Home Services</a>
-                        <a href="../../industries/#automotive">Automotive &amp; Garages</a>
+                        <a href="../../industries/#automotive">Automotive</a>
                         <a href="../../industries/#salons">Salons &amp; Clinics</a>
                         <a href="../../industries/#healthcare">Private Healthcare</a>
-                        <a href="../../industries/#hospitality">Hospitality &amp; Venues</a>
-                        <a href="../../industries/#professional-services">Professional Services</a>
+                        <a href="../../industries/#hospitality">Hospitality</a>
                     </div>
                     <div class="link-group">
-                        <span class="group-title">Sales Partners</span>
+                        <span class="group-title">Partners</span>
                         <a href="../../sales-partners/">Partner Network</a>
-                        <a href="../../careers/">Sales Representative Role</a>
+                        <a href="../../careers/">Sales Roles</a>
                         <a href="../../careers/apply/">Apply Now</a>
-                        <a href="../../contact/">Partner Inquiries</a>
+                        <a href="../../contact/">Partner Enquiries</a>
                     </div>
                     <div class="link-group">
                         <span class="group-title">Company</span>
                         <a href="../../about/">About CCM</a>
-                        <a href="../../contact/">Contact Us</a>
-                        <a href="../../contact/">Privacy &amp; Data Handling</a>
-                        <a href="../../contact/">Terms of Service</a>
+                        <a href="../../contact/">Contact</a>
+                        <a href="../../consultation/">Strategy Call</a>
+                        <a href="mailto:collabcreatemarketing@gmail.com">Email Us</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Collab Create Marketing. All rights reserved. Registered UK commercial agency.</p>
+                <p>&copy; 2026 Collab Create Marketing. All rights reserved.</p>
                 <div class="legal-links">
-                    <a href="../../contact/">Privacy &amp; Data Handling</a>
-                    <a href="../../contact/">Terms of Service</a>
+                    <a href="../../contact/">Contact &amp; Data Enquiries</a>
+                    <a href="../../demo/voice-agent/">Try the Demo</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="../../config.xai.js"></script>
     <script src="../../script.js"></script>
 </body>
 </html>

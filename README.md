@@ -33,13 +33,14 @@ The website uses GitHub Pages clean folder-based URLs with root-level `.html` re
 - **Architecture:** Pure semantic HTML5, modern CSS3 (custom CSS variables, responsive grid/flexbox, animations), vanilla JavaScript (ES6+).
 - **Form Infrastructure:** [Web3Forms](https://web3forms.com) with client-side regex validation, automated hidden inputs, and redirect handling.
 - **Interactive Simulator:** Dynamic JS-powered conversational scenario engine (`script.js`) with structured data extraction display and audio visualization.
-- **Provider Adapter:** Standardized `window.CCMVoiceDemoAdapter` interface ready for WebRTC/SIP integration (Retell, Vapi, ElevenLabs).
+- **Provider Adapter:** Standardized `window.CCMVoiceDemoAdapter` interface with a live **Grok Voice (xAI)** browser demo and hooks for WebRTC/SIP (Retell, Vapi, ElevenLabs).
+- **Grok live demo:** Homepage + `/demo/voice-agent/#live-grok-demo`. Requires deploying `workers/xai-session` and setting `CCM_XAI_TOKEN_URL` in `config.xai.js` (never expose the API key in the browser).
 
 ---
 
 ## Integration Guide
 
-For full technical details on telephony routing, carrier forwarding codes, CRM webhook payloads, and compliance protocols, see [VOICE_AGENT_INTEGRATION.md](./VOICE_AGENT_INTEGRATION.md).
+For Grok Voice setup, telephony routing, carrier forwarding codes, CRM webhook payloads, and compliance protocols, see [VOICE_AGENT_INTEGRATION.md](./VOICE_AGENT_INTEGRATION.md).
 
 ---
 
