@@ -340,6 +340,30 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Live Grok Voice Demo -->
+            <div class="grok-live-demo reveal" id="grokVoiceDemo" style="margin-top:2.5rem;">
+                <div class="grok-demo-header">
+                    <div class="grok-demo-badge"><span class="status-dot"></span> Powered by Grok Voice</div>
+                    <div class="grok-status-pill" data-grok-status data-state="idle">Ready</div>
+                </div>
+                <div class="grok-demo-copy">
+                    <h3>Talk live with a Grok voice agent</h3>
+                    <p>Press start, allow microphone access, and speak naturally. This browser demo uses xAI Grok Voice for real-time conversation — the same class of speech-to-speech technology we configure for UK business phone lines.</p>
+                </div>
+                <div class="grok-controls">
+                    <button type="button" class="btn btn-grok-start" data-grok-start>Start Live Voice Demo</button>
+                    <button type="button" class="btn btn-grok-end" data-grok-end hidden>End Call</button>
+                    <a href="demo/voice-agent/#live-grok-demo" class="btn btn-outline" style="border-color:rgba(125,211,252,0.45);color:#7dd3fc;">Open Full Demo Hub</a>
+                </div>
+                <div class="grok-transcript" data-grok-transcript>
+                    <p style="color:#64748b;margin:0;font-size:0.9rem;">Your live conversation transcript will appear here.</p>
+                </div>
+                <p class="grok-hint">Tip: ask about after-hours bookings, emergency triage, or how CCM connects agents to your CRM. <a href="demo/voice-agent/#live-grok-demo">Setup notes for going fully live →</a></p>
+                <div class="grok-setup-note" data-grok-setup-note hidden>
+                    The live mic demo needs a one-time connection setup (xAI API key via secure token worker). See the <a href="demo/voice-agent/#live-grok-demo" style="color:#fde68a;font-weight:700;">Demo Hub</a> for steps, or book a consultation and we’ll run the call with you.
+                </div>
+            </div>
         </div>
     </section>
 
@@ -355,7 +379,7 @@
             <div class="industry-grid">
                 <!-- Industry 1: Trades -->
                 <div class="industry-card reveal">
-                    <div class="industry-icon">🔧</div>
+                    <div class="industry-icon" aria-hidden="true">01</div>
                     <span class="industry-meta-tag">Home Services &amp; Trades</span>
                     <h3>Plumbing, Heating &amp; Electrical</h3>
                     <p>Captures emergency boiler breakdowns, leaks, and electrical callouts when technicians are on tools or driving between jobs.</p>
@@ -369,7 +393,7 @@
 
                 <!-- Industry 2: Automotive -->
                 <div class="industry-card reveal" style="transition-delay:0.08s;">
-                    <div class="industry-icon">🚗</div>
+                    <div class="industry-icon" aria-hidden="true">02</div>
                     <span class="industry-meta-tag">Automotive &amp; Repairs</span>
                     <h3>Garages, MOT Stations &amp; Tyres</h3>
                     <p>Answers routine quote queries for servicing, brake pads, and MOT slots while mechanics keep both hands on vehicles.</p>
@@ -383,7 +407,7 @@
 
                 <!-- Industry 3: Appointments -->
                 <div class="industry-card reveal" style="transition-delay:0.16s;">
-                    <div class="industry-icon">✂️</div>
+                    <div class="industry-icon" aria-hidden="true">03</div>
                     <span class="industry-meta-tag">Appointments &amp; Grooming</span>
                     <h3>Salons, Barbers &amp; Aesthetic Clinics</h3>
                     <p>Captures appointment requests and reschedules when front-of-house staff are busy treating clients in the chair.</p>
@@ -397,7 +421,7 @@
 
                 <!-- Industry 4: Clinics -->
                 <div class="industry-card reveal">
-                    <div class="industry-icon">🩺</div>
+                    <div class="industry-icon" aria-hidden="true">04</div>
                     <span class="industry-meta-tag">Private Clinics &amp; Health</span>
                     <h3>Dental, Physio &amp; Private Practice</h3>
                     <p>Pre-qualifies incoming patient enquiries with clear operational boundaries, intake questions, and escalation safeguards.</p>
@@ -411,7 +435,7 @@
 
                 <!-- Industry 5: Hospitality -->
                 <div class="industry-card reveal" style="transition-delay:0.08s;">
-                    <div class="industry-icon">🍽️</div>
+                    <div class="industry-icon" aria-hidden="true">05</div>
                     <span class="industry-meta-tag">Hospitality &amp; Dining</span>
                     <h3>Restaurants, Venues &amp; Catering</h3>
                     <p>Takes table reservations, handles dietary questions, and logs large group booking requests during busy service rushes.</p>
@@ -506,7 +530,7 @@
         </div>
     </section>
 
-    <!-- Implementation Process (5 Steps) -->
+    <!-- Implementation Process (4 Steps) -->
     <section>
         <div class="container">
             <div class="section-intro centered reveal">
@@ -515,31 +539,22 @@
                 <p>We handle the technical and operational heavy lifting so your business enjoys reliable call handling without the headache.</p>
             </div>
 
-            <div class="steps" style="margin-top:3rem;">
+            <div class="steps steps-four" style="margin-top:3rem;">
                 <div class="step reveal">
-                    <span class="step-num" style="font-size:1.5rem;font-weight:800;color:var(--accent-color);">Step 1</span>
                     <h3>Discover</h3>
-                    <p>We review your call volume, opening hours, enquiry types, FAQs, and software tools to map your operational bottlenecks.</p>
+                    <p>We review call volume, opening hours, enquiry types, FAQs, and the tools you already use to map where revenue is leaking.</p>
                 </div>
                 <div class="step reveal" style="transition-delay:0.08s;">
-                    <span class="step-num" style="font-size:1.5rem;font-weight:800;color:var(--accent-color);">Step 2</span>
-                    <h3>Design</h3>
-                    <p>We architect the conversation flow: tone of voice, qualification rules, data capture fields, and emergency escalation paths.</p>
+                    <h3>Design &amp; Configure</h3>
+                    <p>We build the conversation flow, qualification rules, CRM fields, and escalation paths — then stress-test interruptions and edge cases.</p>
                 </div>
                 <div class="step reveal" style="transition-delay:0.16s;">
-                    <span class="step-num" style="font-size:1.5rem;font-weight:800;color:var(--accent-color);">Step 3</span>
-                    <h3>Configure &amp; Test</h3>
-                    <p>We build the agent, connect compatible CRM/calendar integrations, and test edge cases, interruptions, and complex questions.</p>
+                    <h3>Deploy</h3>
+                    <p>Connect your existing business number via call forwarding. We run live test calls before switching on full coverage.</p>
                 </div>
                 <div class="step reveal" style="transition-delay:0.24s;">
-                    <span class="step-num" style="font-size:1.5rem;font-weight:800;color:var(--accent-color);">Step 4</span>
-                    <h3>Deploy</h3>
-                    <p>Connect your existing business number via standard call forwarding. We run final live test calls before launching live coverage.</p>
-                </div>
-                <div class="step reveal" style="transition-delay:0.32s;">
-                    <span class="step-num" style="font-size:1.5rem;font-weight:800;color:var(--accent-color);">Step 5</span>
                     <h3>Manage &amp; Optimise</h3>
-                    <p>We review performance signals, make approved content changes, refine dialogue flows, and support your ongoing operations.</p>
+                    <p>We review transcripts, update pricing and hours when you change them, and keep the agent performing as a managed asset.</p>
                 </div>
             </div>
 
@@ -568,63 +583,55 @@
         </div>
     </section>
 
-    <!-- Commercial Call Handling Deployments -->
+    <!-- Where Voice Agents Pay For Themselves -->
     <section>
         <div class="container">
             <div class="section-intro centered reveal">
-                <span class="section-label">Commercial Impact</span>
-                <h2>Call handling architectures built for high-stakes business environments.</h2>
-                <p>From after-hours emergency roadside response to high-volume grooming appointments and private event triage.</p>
+                <span class="section-label">Built For Real UK Operations</span>
+                <h2>Where a managed voice agent pays for itself.</h2>
+                <p>Four commercial environments where missed calls routinely cost more than the system that answers them.</p>
             </div>
 
-            <div class="portfolio-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:2rem;margin-top:3rem;">
-                <!-- Portfolio 1: Best Barbers -->
-                <div class="rich-card reveal">
-                    <div class="card-media" style="height:220px;overflow:hidden;">
-                        <img src="CCM_Assets/case-study-barber.png" alt="Best Barbers appointment triage" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+            <div class="use-case-grid">
+                <article class="use-case-card reveal">
+                    <div class="use-case-media" style="background-image:url('CCM_Assets/homepage-local-business.jpg');" role="img" aria-label="Salon and clinic reception desk"></div>
+                    <div class="use-case-body">
+                        <div class="use-case-label">Salons &amp; Clinics</div>
+                        <h3>Bookings while chairs are full</h3>
+                        <p>Captures after-hours and mid-service appointment requests, checks availability rules, and sends SMS confirmations without interrupting treatments.</p>
                     </div>
-                    <div class="card-body">
-                        <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent-color);font-weight:700;">Appointment &amp; Calendar Booking</span>
-                        <h3>Fade &amp; Grooming Lounges</h3>
-                        <p>Streamlined customer booking flow, practitioner slot checking, and 24/7 automated appointment capture for high-footfall grooming salons.</p>
-                    </div>
-                </div>
+                </article>
 
-                <!-- Portfolio 2: The Lucky Pig -->
-                <div class="rich-card reveal" style="transition-delay:0.08s;">
-                    <div class="card-media" style="height:220px;overflow:hidden;">
-                        <img src="CCM_Assets/case-study-nightlife.png" alt="The Lucky Pig Fitzrovia" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <article class="use-case-card reveal" style="transition-delay:0.08s;">
+                    <div class="use-case-media" style="background-image:url('CCM_Assets/acquisition-capacity.jpg');" role="img" aria-label="Hospitality venue dining room"></div>
+                    <div class="use-case-body">
+                        <div class="use-case-label">Hospitality &amp; Venues</div>
+                        <h3>Reservations vs private hire triage</h3>
+                        <p>Handles table bookings instantly while screening high-value corporate and private-hire enquiries for your events manager.</p>
                     </div>
-                    <div class="card-body">
-                        <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent-color);font-weight:700;">Hospitality &amp; Private Hire</span>
-                        <h3>Dining &amp; Event Venues</h3>
-                        <p>High-converting call triage handling standard dining reservations while screening high-value corporate inquiries and private party buyouts.</p>
-                    </div>
-                </div>
+                </article>
 
-                <!-- Portfolio 3: Me Time Off -->
-                <div class="rich-card reveal" style="transition-delay:0.16s;">
-                    <div class="card-media" style="height:220px;overflow:hidden;">
-                        <img src="CCM_Assets/case-study-wellness.png" alt="Me Time Off Wellness" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <article class="use-case-card reveal" style="transition-delay:0.16s;">
+                    <div class="use-case-media" style="background-image:url('CCM_Assets/reviews-owner.jpg');" role="img" aria-label="Private healthcare consultation setting"></div>
+                    <div class="use-case-body">
+                        <div class="use-case-label">Private Healthcare</div>
+                        <h3>Calm first-line triage</h3>
+                        <p>Collects symptoms, insurance details, and preferred slots with a professional tone — then logs a clean brief for clinical staff.</p>
                     </div>
-                    <div class="card-body">
-                        <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent-color);font-weight:700;">Private Clinic &amp; Consultation</span>
-                        <h3>Specialist Health &amp; Wellness</h3>
-                        <p>Calm, empathetic telephone triage capturing patient symptoms, insurance eligibility, and initial consultation scheduling.</p>
-                    </div>
-                </div>
+                </article>
 
-                <!-- Portfolio 4: Wrong Fuel London -->
-                <div class="rich-card reveal" style="transition-delay:0.24s;">
-                    <div class="card-media" style="height:220px;overflow:hidden;">
-                        <img src="CCM_Assets/case-study-utility.png" alt="Wrong Fuel London Emergency Service" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <article class="use-case-card reveal" style="transition-delay:0.24s;">
+                    <div class="use-case-media" style="background-image:url('CCM_Assets/growth-booking.jpg');" role="img" aria-label="Trades and emergency dispatch operations"></div>
+                    <div class="use-case-body">
+                        <div class="use-case-label">Trades &amp; Emergency</div>
+                        <h3>Urgent dispatch in under a minute</h3>
+                        <p>Qualifies leaks and breakdowns, verifies the postcode, and alerts the on-call engineer while the caller is still on the line.</p>
                     </div>
-                    <div class="card-body">
-                        <span style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent-color);font-weight:700;">Emergency Response &amp; Dispatch</span>
-                        <h3>Emergency Roadside &amp; Trades</h3>
-                        <p>Ultra-fast mobile dispatch architecture capturing distressed callers, verifying location postcodes, and alerting on-call engineers within 60 seconds.</p>
-                    </div>
-                </div>
+                </article>
+            </div>
+
+            <div style="text-align:center;margin-top:2.25rem;" class="reveal">
+                <a href="industries/" class="btn btn-outline">Explore Industry Blueprints →</a>
             </div>
         </div>
     </section>
@@ -835,54 +842,54 @@
                 <div class="footer-brand">
                     <img src="CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo">
                     <p class="tagline">Managed AI voice agents for UK businesses. Never miss a high-value customer call again.</p>
-                    <p style="font-size:0.875rem;margin-top:1rem;color:var(--text-muted);">
-                        Direct Enquiries: <a href="mailto:Collabcreatemarketing@gmail.com" style="color:var(--accent-color);font-weight:600;">Collabcreatemarketing@gmail.com</a>
+                    <p class="footer-contact">
+                        Enquiries: <a href="mailto:collabcreatemarketing@gmail.com">collabcreatemarketing@gmail.com</a>
                     </p>
                 </div>
                 <div class="footer-links">
                     <div class="link-group">
-                        <span class="group-title">AI Voice Services</span>
+                        <span class="group-title">Services</span>
                         <a href="solutions/ai-voice-agents/">AI Voice Agents</a>
-                        <a href="how-it-works/">How It Works &amp; Management</a>
-                        <a href="industries/">Industries &amp; Use Cases</a>
-                        <a href="demo/voice-agent/">Interactive Live Demo</a>
+                        <a href="how-it-works/">How It Works</a>
+                        <a href="industries/">Industries</a>
+                        <a href="demo/voice-agent/">Live Demo</a>
                         <a href="consultation/">Book Consultation</a>
                     </div>
                     <div class="link-group">
-                        <span class="group-title">Industry Blueprints</span>
+                        <span class="group-title">Industries</span>
                         <a href="industries/#trades">Trades &amp; Home Services</a>
-                        <a href="industries/#automotive">Automotive &amp; Garages</a>
+                        <a href="industries/#automotive">Automotive</a>
                         <a href="industries/#salons">Salons &amp; Clinics</a>
                         <a href="industries/#healthcare">Private Healthcare</a>
-                        <a href="industries/#hospitality">Hospitality &amp; Venues</a>
-                        <a href="industries/#professional-services">Professional Services</a>
+                        <a href="industries/#hospitality">Hospitality</a>
                     </div>
                     <div class="link-group">
-                        <span class="group-title">Sales Partners</span>
+                        <span class="group-title">Partners</span>
                         <a href="sales-partners/">Partner Network</a>
-                        <a href="careers/">Sales Representative Role</a>
+                        <a href="careers/">Sales Roles</a>
                         <a href="careers/apply/">Apply Now</a>
-                        <a href="contact/">Partner Inquiries</a>
+                        <a href="contact/">Partner Enquiries</a>
                     </div>
                     <div class="link-group">
                         <span class="group-title">Company</span>
                         <a href="about/">About CCM</a>
-                        <a href="contact/">Contact Us</a>
-                        <a href="contact/">Privacy &amp; Data Handling</a>
-                        <a href="contact/">Terms of Service</a>
+                        <a href="contact/">Contact</a>
+                        <a href="consultation/">Strategy Call</a>
+                        <a href="mailto:collabcreatemarketing@gmail.com">Email Us</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Collab Create Marketing. All rights reserved. Registered UK commercial agency.</p>
+                <p>&copy; 2026 Collab Create Marketing. All rights reserved.</p>
                 <div class="legal-links">
-                    <a href="contact/">Privacy &amp; Data Handling</a>
-                    <a href="contact/">Terms of Service</a>
+                    <a href="contact/">Contact &amp; Data Enquiries</a>
+                    <a href="demo/voice-agent/">Try the Demo</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="config.xai.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

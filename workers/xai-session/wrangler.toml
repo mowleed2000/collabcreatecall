@@ -1,0 +1,9 @@
+name = "ccm-xai-session"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+# Set secrets after deploy:
+#   npx wrangler secret put XAI_API_KEY
+# Optional CORS lock-down:
+#   npx wrangler secret put ALLOWED_ORIGIN
+#   value example: https://collabcreatemarketing.com,https://www.collabcreatemarketing.com

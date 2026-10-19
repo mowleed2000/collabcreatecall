@@ -443,10 +443,382 @@ function initFormPrefills() {
   });
 }
 
+/* ==========================================================================
+   GROK / xAI REALTIME VOICE DEMO
+   Requires a token endpoint that returns { value: "..." } from
+   POST https://api.x.ai/v1/realtime/client_secrets (never expose XAI_API_KEY).
+   Configure with: window.CCM_XAI_TOKEN_URL = 'https://your-worker.example/session'
+   ========================================================================== */
+
+window.CCM_XAI_CONFIG = window.CCM_XAI_CONFIG || {
+  model: 'grok-voice-latest',
+  voice: 'eve',
+  instructions:
+    'You are the Collab Create Marketing (CCM) AI voice agent demo for UK businesses. ' +
+    'Speak in clear, professional British English. Keep answers concise (2-4 sentences). ' +
+    'Explain how managed AI voice agents answer missed calls, book appointments, triage emergencies, ' +
+    'and sync details to CRM. If asked to book a consultation, invite them to use the Book Consultation form on this website. ' +
+    'Never invent pricing; say CCM scopes pricing on a consultation. Be helpful, confident, and commercially focused.'
+};
+
+window.CCMVoiceDemoAdapter = Object.assign(window.CCMVoiceDemoAdapter, {
+  providerName: 'xAI Grok Voice',
+  provider: 'grok'
+});
+
+function floatTo16BitPCM(float32Array) {
+  const buffer = new ArrayBuffer(float32Array.length * 2);
+  const view = new DataView(buffer);
+  for (let i = 0; i < float32Array.length; i++) {
+    const s = Math.max(-1, Math.min(1, float32Array[i]));
+    view.setInt16(i * 2, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+  }
+  return buffer;
+}
+
+function arrayBufferToBase64(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  const chunk = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunk) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+  }
+  return btoa(binary);
+}
+
+function base64ToArrayBuffer(base64) {
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return bytes.buffer;
+}
+
+async function fetchGrokEphemeralToken() {
+  const tokenUrl =
+    window.CCM_XAI_TOKEN_URL ||
+    (window.CCM_XAI_CONFIG && window.CCM_XAI_CONFIG.tokenUrl) ||
+    '';
+
+  if (!tokenUrl) {
+    const err = new Error('TOKEN_URL_MISSING');
+    err.code = 'TOKEN_URL_MISSING';
+    throw err;
+  }
+
+  const res = await fetch(tokenUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ expires_after: { seconds: 300 } })
+  });
+
+  if (!res.ok) {
+    throw new Error('Token endpoint returned ' + res.status);
+  }
+
+  const data = await res.json();
+  const token = data.value || data.client_secret || data.token;
+  if (!token) throw new Error('Token response missing value');
+  return token;
+}
+
+function initGrokVoiceDemo() {
+  const roots = document.querySelectorAll('#grokVoiceDemo, #live-grok-demo, [data-grok-demo]');
+  if (!roots.length) return;
+
+  roots.forEach((root) => {
+    const startBtn = root.querySelector('[data-grok-start]');
+    const endBtn = root.querySelector('[data-grok-end]');
+    const statusEl = root.querySelector('[data-grok-status]');
+    const transcriptEl = root.querySelector('[data-grok-transcript]');
+    const setupNote = root.querySelector('[data-grok-setup-note]');
+
+    let ws = null;
+    let mediaStream = null;
+    let audioContext = null;
+    let processor = null;
+    const playbackQueue = [];
+    let isPlaying = false;
+    let sessionActive = false;
+
+    function setStatus(state, label) {
+      if (!statusEl) return;
+      statusEl.dataset.state = state;
+      statusEl.textContent = label;
+    }
+
+    function appendTranscript(role, text) {
+      if (!transcriptEl || !text) return;
+      if (transcriptEl.querySelector('p[data-placeholder]')) {
+        transcriptEl.innerHTML = '';
+      }
+      const emptyHint = transcriptEl.querySelector('p');
+      if (emptyHint && emptyHint.textContent.indexOf('will appear here') !== -1) {
+        transcriptEl.innerHTML = '';
+      }
+      const row = document.createElement('div');
+      row.className = 'transcript-message ' + (role === 'user' ? 'caller' : 'agent');
+      row.innerHTML =
+        '<div class="transcript-sender">' +
+        (role === 'user' ? 'You' : 'Grok Voice Agent') +
+        '</div><div></div>';
+      row.querySelector('div:last-child').textContent = text;
+      transcriptEl.appendChild(row);
+      transcriptEl.scrollTop = transcriptEl.scrollHeight;
+    }
+
+    async function playPcmChunk(base64Audio) {
+      if (!audioContext) return;
+      const pcm = base64ToArrayBuffer(base64Audio);
+      const int16 = new Int16Array(pcm);
+      const float32 = new Float32Array(int16.length);
+      for (let i = 0; i < int16.length; i++) float32[i] = int16[i] / 0x8000;
+      const buffer = audioContext.createBuffer(1, float32.length, 24000);
+      buffer.copyToChannel(float32, 0);
+      playbackQueue.push(buffer);
+      if (!isPlaying) drainPlaybackQueue();
+    }
+
+    function drainPlaybackQueue() {
+      if (!audioContext || !playbackQueue.length) {
+        isPlaying = false;
+        if (sessionActive) setStatus('listening', 'Listening…');
+        return;
+      }
+      isPlaying = true;
+      setStatus('speaking', 'Agent speaking…');
+      const buffer = playbackQueue.shift();
+      const source = audioContext.createBufferSource();
+      source.buffer = buffer;
+      source.connect(audioContext.destination);
+      source.onended = () => drainPlaybackQueue();
+      source.start();
+    }
+
+    async function startSession() {
+      try {
+        setStatus('connecting', 'Connecting…');
+        if (setupNote) setupNote.hidden = true;
+
+        const token = await fetchGrokEphemeralToken();
+        mediaStream = await navigator.mediaDevices.getUserMedia({
+          audio: {
+            echoCancellation: true,
+            noiseSuppression: true,
+            channelCount: 1
+          }
+        });
+
+        audioContext = new (window.AudioContext || window.webkitAudioContext)({
+          sampleRate: 24000
+        });
+
+        const model = (window.CCM_XAI_CONFIG && window.CCM_XAI_CONFIG.model) || 'grok-voice-latest';
+        const wsUrl = 'wss://api.x.ai/v1/realtime?model=' + encodeURIComponent(model);
+        ws = new WebSocket(wsUrl, ['xai-client-secret.' + token]);
+
+        ws.binaryType = 'arraybuffer';
+
+        ws.onopen = () => {
+          sessionActive = true;
+          window.CCMVoiceDemoAdapter.isConnected = true;
+          window.CCMVoiceDemoAdapter.status = 'connected';
+          setStatus('connected', 'Connected');
+          if (startBtn) startBtn.hidden = true;
+          if (endBtn) endBtn.hidden = false;
+
+          const cfg = window.CCM_XAI_CONFIG || {};
+          ws.send(
+            JSON.stringify({
+              type: 'session.update',
+              session: {
+                voice: cfg.voice || 'eve',
+                instructions: cfg.instructions,
+                turn_detection: { type: 'server_vad' },
+                audio: {
+                  input: { format: { type: 'audio/pcm', rate: 24000 } },
+                  output: { format: { type: 'audio/pcm', rate: 24000 } }
+                }
+              }
+            })
+          );
+
+          // Warm greeting so visitors hear the agent immediately
+          ws.send(
+            JSON.stringify({
+              type: 'conversation.item.create',
+              item: {
+                type: 'message',
+                role: 'user',
+                content: [
+                  {
+                    type: 'input_text',
+                    text: 'Hello — please briefly introduce yourself as the CCM managed AI voice agent demo and ask how you can help.'
+                  }
+                ]
+              }
+            })
+          );
+          ws.send(JSON.stringify({ type: 'response.create' }));
+
+          const source = audioContext.createMediaStreamSource(mediaStream);
+          processor = audioContext.createScriptProcessor(4096, 1, 1);
+          // Keep the processor graph alive without echoing the mic to speakers
+          const mute = audioContext.createGain();
+          mute.gain.value = 0;
+          processor.onaudioprocess = (e) => {
+            if (!ws || ws.readyState !== WebSocket.OPEN) return;
+            const input = e.inputBuffer.getChannelData(0);
+            const pcm = floatTo16BitPCM(input);
+            ws.send(
+              JSON.stringify({
+                type: 'input_audio_buffer.append',
+                audio: arrayBufferToBase64(pcm)
+              })
+            );
+          };
+          source.connect(processor);
+          processor.connect(mute);
+          mute.connect(audioContext.destination);
+          setStatus('listening', 'Listening…');
+        };
+
+        ws.onmessage = async (event) => {
+          if (typeof event.data !== 'string') return;
+          let msg;
+          try {
+            msg = JSON.parse(event.data);
+          } catch (e) {
+            return;
+          }
+
+          switch (msg.type) {
+            case 'response.output_audio.delta':
+            case 'response.audio.delta':
+              if (msg.delta) await playPcmChunk(msg.delta);
+              break;
+            case 'response.output_audio_transcript.done':
+            case 'response.audio_transcript.done':
+              if (msg.transcript) appendTranscript('assistant', msg.transcript);
+              break;
+            case 'conversation.item.input_audio_transcription.completed':
+              if (msg.transcript) appendTranscript('user', msg.transcript);
+              break;
+            case 'input_audio_buffer.speech_started':
+              setStatus('listening', 'Hearing you…');
+              break;
+            case 'response.done':
+              if (sessionActive) setStatus('listening', 'Listening…');
+              break;
+            case 'error':
+              console.error('[Grok Voice]', msg);
+              setStatus('error', 'Error');
+              if (setupNote) {
+                setupNote.hidden = false;
+                setupNote.textContent =
+                  (msg.error && msg.error.message) ||
+                  'Voice session error. Check your xAI credits and token worker.';
+              }
+              break;
+            default:
+              break;
+          }
+        };
+
+        ws.onerror = () => {
+          setStatus('error', 'Connection error');
+        };
+
+        ws.onclose = () => {
+          cleanupSession(false);
+        };
+      } catch (err) {
+        console.error('[Grok Voice] start failed', err);
+        if (err.code === 'TOKEN_URL_MISSING' || (err.message && err.message.indexOf('TOKEN_URL') !== -1)) {
+          setStatus('error', 'Setup required');
+          if (setupNote) setupNote.hidden = false;
+        } else if (err.name === 'NotAllowedError') {
+          setStatus('error', 'Mic blocked');
+          if (setupNote) {
+            setupNote.hidden = false;
+            setupNote.textContent = 'Microphone permission is required for the live Grok voice demo.';
+          }
+        } else {
+          setStatus('error', 'Unavailable');
+          if (setupNote) {
+            setupNote.hidden = false;
+            setupNote.textContent =
+              'Could not start the live demo (' +
+              (err.message || 'unknown error') +
+              '). Deploy the token worker with your xAI API key — see VOICE_AGENT_INTEGRATION.md.';
+          }
+        }
+        cleanupSession(false);
+      }
+    }
+
+    function cleanupSession(updateButtons) {
+      sessionActive = false;
+      window.CCMVoiceDemoAdapter.isConnected = false;
+      window.CCMVoiceDemoAdapter.status = 'idle';
+
+      if (processor) {
+        try {
+          processor.disconnect();
+        } catch (e) {}
+        processor = null;
+      }
+      if (mediaStream) {
+        mediaStream.getTracks().forEach((t) => t.stop());
+        mediaStream = null;
+      }
+      if (audioContext) {
+        audioContext.close().catch(() => {});
+        audioContext = null;
+      }
+      if (ws) {
+        try {
+          if (ws.readyState === WebSocket.OPEN) ws.close();
+        } catch (e) {}
+        ws = null;
+      }
+      playbackQueue.length = 0;
+      isPlaying = false;
+
+      if (updateButtons !== false) {
+        if (startBtn) startBtn.hidden = false;
+        if (endBtn) endBtn.hidden = true;
+        setStatus('idle', 'Ready');
+      } else {
+        if (startBtn) startBtn.hidden = false;
+        if (endBtn) endBtn.hidden = true;
+        if (statusEl && statusEl.dataset.state !== 'error') {
+          setStatus('idle', 'Ready');
+        }
+      }
+    }
+
+    function endSession() {
+      cleanupSession(true);
+    }
+
+    if (startBtn) startBtn.addEventListener('click', startSession);
+    if (endBtn) endBtn.addEventListener('click', endSession);
+
+    // Only surface the technical setup note on the demo hub (operators configuring Grok).
+    // Homepage visitors see it only after a failed Start attempt.
+    const hasTokenUrl = !!(window.CCM_XAI_TOKEN_URL || (window.CCM_XAI_CONFIG && window.CCM_XAI_CONFIG.tokenUrl));
+    const isDemoHub = !!root.closest('#live-grok-demo') || root.id === 'live-grok-demo';
+    if (!hasTokenUrl && setupNote && isDemoHub) {
+      setupNote.hidden = false;
+    }
+  });
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   initVoiceDemo();
   initOpportunityCalculator();
   initFormPrefills();
+  initGrokVoiceDemo();
 });
 
