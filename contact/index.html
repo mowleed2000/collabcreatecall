@@ -69,38 +69,14 @@
                 <li><a href="../industries/">Industries</a></li>
                 <li><a href="../demo/voice-agent/">Live Demo</a></li>
                 <li class="has-dropdown">
-                    <a href="../business-solutions/">Solutions</a>
-                    <ul class="dropdown wide">
-                        <li><span class="dropdown-label">Voice &amp; Call Solutions</span></li>
-                        <li><a href="../solutions/ai-voice-agents/"><strong>AI Voice Agents (Core)</strong></a></li>
-                        <li><a href="../how-it-works/">Managed Implementation Process</a></li>
-                        <li><a href="../industries/">Industry Workflows &amp; Cases</a></li>
-                        <li><a href="../demo/voice-agent/">Interactive Voice Demo</a></li>
-                        <li><span class="dropdown-label">Digital &amp; Conversion</span></li>
-                        <li><a href="../solutions/websites-digital/">Websites &amp; Digital</a></li>
-                        <li><a href="../free-demo/">Free Website Demo</a></li>
-                        <li><a href="../premium-website/">Premium Custom Website</a></li>
-                        <li><a href="../review-system/">Customer Review System</a></li>
-                        <li><a href="../growth-system/">Growth &amp; Booking System</a></li>
-                        <li><a href="../client-acquisition/">Client Acquisition</a></li>
-                        <li><span class="dropdown-label">Commercial Portfolio</span></li>
-                        <li><a href="../business-solutions/">All Business Solutions</a></li>
-                        <li><a href="../solutions/business-energy/">Business Energy</a></li>
-                        <li><a href="../solutions/business-broadband/">Business Broadband</a></li>
-                        <li><a href="../solutions/card-payments/">Card Payments</a></li>
-                        <li><a href="../solutions/business-funding/">Business Funding</a></li>
-                        <li><a href="../solutions/branded-products/">Branded Supplies</a></li>
-                    </ul>
-                </li>
-                <li><a href="../about/">About</a></li>
-                <li class="has-dropdown">
-                    <a href="../sales-partners/">Partners</a>
+                    <a href="../sales-partners/">Sales Partners</a>
                     <ul class="dropdown">
-                        <li><a href="../sales-partners/">Sales Partner Network</a></li>
+                        <li><a href="../sales-partners/">Partner Opportunity</a></li>
                         <li><a href="../careers/">Sales Representative Role</a></li>
                         <li><a href="../careers/apply/">Apply Now</a></li>
                     </ul>
                 </li>
+                <li><a href="../about/">About</a></li>
                 <li><a href="../contact/" style="color:var(--accent-color);font-weight:700;">Contact</a></li>
             </ul>
             <div class="nav-cta">
@@ -117,7 +93,7 @@
         <div class="container reveal" style="text-align:center;max-width:850px;margin:0 auto;">
             <span class="badge-pill"><span class="status-dot"></span> Direct Commercial Channels</span>
             <h1>Let's talk business outcomes.</h1>
-            <p class="lead" style="margin-left:auto;margin-right:auto;">Whether you need an AI voice agent to capture after-hours calls, a high-converting digital platform, commercial utilities review, or partner network info — we respond within one business day.</p>
+            <p class="lead" style="margin-left:auto;margin-right:auto;">Whether you need an AI voice agent to capture after-hours calls, explore sales partner opportunities, or schedule a custom strategy session — we respond within one business day.</p>
         </div>
     </header>
 
@@ -132,7 +108,7 @@
                         📞 AI Voice Agent Consultation
                     </button>
                     <button class="contact-tab-btn" id="tabBtnGeneral" onclick="switchContactTab('general')">
-                        🏢 General Business &amp; Partner Inquiries
+                        🏢 Partner &amp; General Inquiries
                     </button>
                 </div>
 
@@ -228,17 +204,17 @@
                     </form>
                 </div>
 
-                <!-- TAB 2: General & Commercial Solutions Form (Form 3) -->
+                <!-- TAB 2: Partnership & General Inquiries Form -->
                 <div class="tab-content" id="tabContentGeneral">
                     <div style="margin-bottom:1.5rem;">
-                        <h2 style="font-size:1.5rem;margin-bottom:0.35rem;">General Enquiry &amp; Commercial Solutions</h2>
-                        <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">Websites, utilities review, payments, business funding, or sales partner opportunities.</p>
+                        <h2 style="font-size:1.5rem;margin-bottom:0.35rem;">Partnership &amp; General Inquiries</h2>
+                        <p style="font-size:0.9rem;color:var(--text-muted);margin:0;">Sales partner network opportunities, sales representative roles, or commercial voice AI partnerships.</p>
                     </div>
 
                     <form data-ccm-form="general" data-redirect="success/">
                         <input type="hidden" name="access_key" value="5bba1f84-9bcb-4985-857f-299ad8315b75">
-                        <input type="hidden" name="subject" value="New Commercial Solution Enquiry — CCM">
-                        <input type="hidden" name="from_name" value="CCM General Inquiries">
+                        <input type="hidden" name="subject" value="New Partnership &amp; Commercial Enquiry — CCM">
+                        <input type="hidden" name="from_name" value="CCM Partner &amp; General Pipeline">
                         <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
                         <div class="grid-2" style="gap:1.25rem;">
@@ -270,15 +246,9 @@
                             <label for="g_category">Enquiry Subject / Solution *</label>
                             <select id="g_category" name="enquiry_category" required class="form-control">
                                 <option value="" disabled selected>Select category</option>
-                                <option value="websites-digital">Websites &amp; Digital Systems</option>
-                                <option value="free-demo">Free Website Demonstration</option>
-                                <option value="business-energy">Business Energy Review</option>
-                                <option value="business-broadband">Business Broadband</option>
-                                <option value="card-payments">Card Payment Terminals &amp; Fees</option>
-                                <option value="business-funding">Business Funding &amp; Loans</option>
-                                <option value="branded-products">Branded Supplies &amp; Uniforms</option>
                                 <option value="sales-partner">Sales Partner Network Opportunity</option>
                                 <option value="sales-role">Sales Representative Application Query</option>
+                                <option value="voice-partnership">Commercial Voice AI Partnership</option>
                                 <option value="general">General Commercial Inquiry</option>
                             </select>
                             <div class="field-error"></div>
@@ -286,7 +256,7 @@
 
                         <div class="form-group" style="margin-top:1rem;">
                             <label for="g_message">How can we assist your business? *</label>
-                            <textarea id="g_message" name="message" rows="4" required placeholder="Tell us about your requirements, current providers, or timeline." class="form-control"></textarea>
+                            <textarea id="g_message" name="message" rows="4" required placeholder="Tell us about your requirements, background, or timeline." class="form-control"></textarea>
                             <div class="field-error"></div>
                         </div>
 
@@ -358,7 +328,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo">
-                    <p class="tagline">Managed AI voice agents and commercial business systems for UK companies.</p>
+                    <p class="tagline">Managed AI voice agents for UK businesses. Never miss a high-value customer call again.</p>
                     <p style="font-size:0.875rem;margin-top:1rem;color:var(--text-muted);">
                         Direct Enquiries: <a href="mailto:Collabcreatemarketing@gmail.com" style="color:var(--accent-color);font-weight:600;">Collabcreatemarketing@gmail.com</a>
                     </p>
@@ -366,37 +336,34 @@
                 <div class="footer-links">
                     <div class="link-group">
                         <span class="group-title">AI Voice Services</span>
-                        <a href="../solutions/ai-voice-agents/">AI Voice Agents (Sales)</a>
+                        <a href="../solutions/ai-voice-agents/">AI Voice Agents</a>
                         <a href="../how-it-works/">How It Works &amp; Management</a>
                         <a href="../industries/">Industries &amp; Use Cases</a>
                         <a href="../demo/voice-agent/">Interactive Live Demo</a>
-                        <a href="../contact/#consultation">Book Consultation</a>
+                        <a href="../consultation/">Book Consultation</a>
                     </div>
                     <div class="link-group">
-                        <span class="group-title">Digital &amp; Growth</span>
-                        <a href="../solutions/websites-digital/">Websites &amp; Digital</a>
-                        <a href="../free-demo/">Free Website Demo</a>
-                        <a href="../premium-website/">Premium Custom Website</a>
-                        <a href="../review-system/">Customer Review System</a>
-                        <a href="../growth-system/">Growth &amp; Booking System</a>
-                        <a href="../client-acquisition/">Client Acquisition</a>
+                        <span class="group-title">Industry Blueprints</span>
+                        <a href="../industries/#trades">Trades &amp; Home Services</a>
+                        <a href="../industries/#automotive">Automotive &amp; Garages</a>
+                        <a href="../industries/#salons">Salons &amp; Clinics</a>
+                        <a href="../industries/#healthcare">Private Healthcare</a>
+                        <a href="../industries/#hospitality">Hospitality &amp; Venues</a>
+                        <a href="../industries/#professional-services">Professional Services</a>
                     </div>
                     <div class="link-group">
-                        <span class="group-title">Business Solutions</span>
-                        <a href="../business-solutions/">All Business Solutions</a>
-                        <a href="../solutions/business-energy/">Business Energy</a>
-                        <a href="../solutions/business-broadband/">Business Broadband</a>
-                        <a href="../solutions/card-payments/">Card Payments</a>
-                        <a href="../solutions/business-funding/">Business Funding</a>
-                        <a href="../solutions/branded-products/">Branded Supplies</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Company &amp; Network</span>
-                        <a href="../about/">About CCM</a>
-                        <a href="../sales-partners/">Sales Partner Network</a>
+                        <span class="group-title">Sales Partners</span>
+                        <a href="../sales-partners/">Partner Network</a>
                         <a href="../careers/">Sales Representative Role</a>
                         <a href="../careers/apply/">Apply Now</a>
+                        <a href="../contact/">Partner Inquiries</a>
+                    </div>
+                    <div class="link-group">
+                        <span class="group-title">Company</span>
+                        <a href="../about/">About CCM</a>
                         <a href="../contact/">Contact Us</a>
+                        <a href="../contact/">Privacy &amp; Data Handling</a>
+                        <a href="../contact/">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -435,7 +402,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const interest = params.get('interest') || params.get('tab') || params.get('requirement');
-            if (interest && ['websites-digital', 'energy', 'broadband', 'payments', 'funding', 'partner', 'general'].includes(interest)) {
+            if (interest && ['partner', 'careers', 'general'].includes(interest)) {
                 switchContactTab('general');
             }
         });

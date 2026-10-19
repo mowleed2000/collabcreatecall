@@ -1,6 +1,6 @@
 # Collab Create Marketing (CCM)
 
-> Premium B2B sales platform for **Managed AI Voice Agents**, high-converting digital platforms, and commercial business solutions across the UK.
+> Premium B2B sales platform for **Managed AI Voice Agents** across the UK.
 
 - **Live Website:** [https://collabcreatemarketing.com](https://collabcreatemarketing.com)
 - **Deployment Platform:** GitHub Pages (custom domain via `CNAME`)
@@ -20,14 +20,11 @@ The website uses GitHub Pages clean folder-based URLs with root-level `.html` re
 - `/demo/voice-agent/` (`demo/index.html` and `demo.html` shims): Interactive voice simulator showroom, sub-600ms latency benchmarks, adapter architecture, and custom prototype request form.
 - `/consultation/` (`consultation.html` shim): Dedicated high-converting strategy booking page with `/consultation/success/` confirmation page.
 
-### Wider Commercial Portfolio
-- `/solutions/websites-digital/`: High-conversion websites, booking pipelines, and review systems.
-- `/free-demo/`: Free custom website prototype request.
-- `/premium-website/`: Bespoke digital build service.
-- `/business-solutions/`: Comprehensive commercial services (Business Energy, Broadband, Card Payments, Funding, Branded Supplies).
-- `/about/`: CCM origin story, Mo's commercial philosophy, and operating principles.
-- `/sales-partners/` & `/careers/`: UK sales representative recruitment and partner network.
-- `/contact/`: Dual-tabbed inbound pipeline for voice consultations and commercial enquiries.
+### Partnerships & Company
+- `/sales-partners/` (`sales-partners.html` shim): Dedicated UK Sales Partner opportunity page for AI Voice Agent sales.
+- `/careers/` (`careers.html` shim) & `/careers/apply/` (`apply.html` shim): B2B Voice AI Sales Representative role and application pipeline.
+- `/about/` (`about.html` shim): CCM origin story, Mo's commercial philosophy, and operating principles.
+- `/contact/` (`contact.html` shim): Dual-tabbed inbound pipeline for voice consultations and partnership enquiries.
 
 ---
 

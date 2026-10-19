@@ -11,10 +11,9 @@ All enquiries and job applications are submitted through **Web3Forms**.
 
 | Form | Page | Subject tag |
 |------|------|-------------|
-| Contact | `/contact/` | New Website Enquiry — Collab Create Marketing |
-| Sales application | `/careers/apply/` | New Sales Representative Application — CCM |
-| Free demo | `/free-demo/` | (existing subject) |
-| Premium / Acquisition | respective pages | (existing subjects) |
+| Voice consultation | `/consultation/` & `/contact/` | New AI Voice Consultation Booking — CCM |
+| Partner enquiry | `/contact/` | New Partnership & Commercial Enquiry — CCM |
+| Sales representative application | `/careers/apply/` | New Sales Representative Application — CCM |
 
 ## Activating / changing delivery
 
