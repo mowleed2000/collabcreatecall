@@ -804,9 +804,11 @@ function initGrokVoiceDemo() {
     if (startBtn) startBtn.addEventListener('click', startSession);
     if (endBtn) endBtn.addEventListener('click', endSession);
 
-    // Surface setup note early when token URL is not configured
+    // Only surface the technical setup note on the demo hub (operators configuring Grok).
+    // Homepage visitors see it only after a failed Start attempt.
     const hasTokenUrl = !!(window.CCM_XAI_TOKEN_URL || (window.CCM_XAI_CONFIG && window.CCM_XAI_CONFIG.tokenUrl));
-    if (!hasTokenUrl && setupNote) {
+    const isDemoHub = !!root.closest('#live-grok-demo') || root.id === 'live-grok-demo';
+    if (!hasTokenUrl && setupNote && isDemoHub) {
       setupNote.hidden = false;
     }
   });

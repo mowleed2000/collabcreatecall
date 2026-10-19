@@ -2164,8 +2164,17 @@ footer a {
   border: 1px solid rgba(248, 113, 113, 0.45);
 }
 
+.grok-live-demo .btn-grok-end[hidden],
+.grok-live-demo .btn-grok-start[hidden] {
+  display: none !important;
+}
+
 .grok-live-demo .btn-grok-end:hover {
   background: rgba(248, 113, 113, 0.12);
+}
+
+.grok-live-demo .grok-setup-note[hidden] {
+  display: none !important;
 }
 
 .grok-live-demo .grok-transcript {
