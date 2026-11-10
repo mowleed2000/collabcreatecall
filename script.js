@@ -14,6 +14,14 @@ if (hamburger && navLinks) {
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
 }
 
+// Show the mobile demo CTA after the visitor has passed the hero.
+const mobileCta = document.querySelector('.sticky-mobile-cta-bar');
+if (mobileCta) {
+  const updateMobileCta = () => mobileCta.classList.toggle('is-visible', window.scrollY > window.innerHeight);
+  updateMobileCta();
+  window.addEventListener('scroll', updateMobileCta, { passive: true });
+}
+
 // Navbar state on scroll
 const navbar = document.querySelector('.navbar');
 if (navbar) {
