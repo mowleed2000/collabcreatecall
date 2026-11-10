@@ -1973,3 +1973,6 @@ a{transition:color .18s ease,background-color .18s ease,border-color .18s ease}
   .pricing-section{padding:4rem 5%}
   .footer-cta{white-space:normal}
 }
+
+/* Keep the footer call-to-action legible against its blue background. */
+.footer-group a.btn-primary,.footer-group a.btn-primary:hover{color:#fff}
