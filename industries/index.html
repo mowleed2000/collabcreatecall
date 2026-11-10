@@ -16,35 +16,21 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing">
-            </a>
-            <ul class="nav-links">
-                <li><a href="../solutions/ai-voice-agents/">AI Voice Agents</a></li>
-                <li><a href="../how-it-works/">How It Works</a></li>
-                <li><a href="../industries/" style="color:var(--accent-color);font-weight:700;">Industries</a></li>
-                <li><a href="../demo/voice-agent/">Live Demo</a></li>
-                <li class="has-dropdown">
-                    <a href="../sales-partners/">Sales Partners</a>
-                    <ul class="dropdown">
-                        <li><a href="../sales-partners/">Partner Opportunity</a></li>
-                        <li><a href="../careers/">Sales Representative Role</a></li>
-                        <li><a href="../careers/apply/">Apply Now</a></li>
-                    </ul>
-                </li>
-                <li><a href="../about/">About</a></li>
-                <li><a href="../contact/">Contact</a></li>
-            </ul>
-            <div class="nav-cta">
-                <a href="../consultation/" class="btn btn-primary">Book Consultation</a>
-            </div>
-            <button class="hamburger" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <nav class="navbar" aria-label="Main navigation">
+  <div class="nav-container">
+   <a href="../index.html" class="nav-logo" aria-label="Collab Create Marketing home"><img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing"></a>
+   <ul class="nav-links" id="primary-navigation">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../solutions/ai-voice-agents/">AI Voice Agents</a></li>
+    <li><a href="../how-it-works/">How It Works</a></li>
+    <li><a href="../industries/">Industries</a></li>
+    <li><a href="../about/">About</a></li>
+    <li><a href="../contact/">Contact</a></li>
+   </ul>
+   <div class="nav-cta"><a href="../demo/voice-agent/index.html" class="btn btn-primary">Request a Demo</a></div>
+   <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+  </div>
+ </nav>
 
     <!-- Page Header -->
     <header class="page-hero">
@@ -54,7 +40,7 @@
             <p class="lead" style="margin-left:auto;margin-right:auto;">Generic AI assistants hallucinate and frustrate callers. CCM builds custom conversational models tailored to the specific vocabulary, booking logic, emergency criteria, and software ecosystem of your trade.</p>
             <div class="btn-group" style="justify-content:center;margin-top:2rem;">
                 <a href="#industries-grid" class="btn btn-primary">View Industry Blueprints ↓</a>
-                <a href="../demo/voice-agent/" class="btn btn-outline">Test the Voice Demo →</a>
+                <a href="../demo/voice-agent/" class="btn btn-outline">Request a tailored demo →</a>
             </div>
         </div>
     </header>
@@ -87,14 +73,14 @@
                                 <span style="color:#ef4444;">⚠️</span> The Operational Bottleneck
                             </h4>
                             <p style="font-size:0.95rem;line-height:1.6;color:var(--text-muted);margin-bottom:1.5rem;">
-                                Engineers and contractors are on ladders, in roof voids, or under pipework with their hands full. When an emergency leak or heating outage strikes, homeowners call the next firm on Google if the phone rings more than 3 times. Over £1,800/week in high-margin emergency jobs are forfeited to voicemail.
+                                Engineers and contractors are on ladders, in roof voids, or under pipework with their hands full. When an emergency leak or heating outage strikes, callers may try another provider if they cannot reach the business. Missed calls can delay urgent enquiries and leave teams without the details they need to follow up.
                             </p>
 
                             <h4 style="font-size:1.1rem;color:var(--text-color);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
                                 <span style="color:var(--accent-color);">⚡</span> Illustrative Call Workflow
                             </h4>
                             <ol style="font-size:0.95rem;line-height:1.6;color:var(--text-muted);padding-left:1.25rem;margin-bottom:1.5rem;">
-                                <li>Answers instantly on ring 2 with your business name and friendly tone.</li>
+                                <li>Greets callers using your business name and agreed call flow.</li>
                                 <li>Triages between critical emergencies (active leak, gas smell, power outage) and standard routine estimates.</li>
                                 <li>Captures exact postal code, property access instructions, and tenancy/owner status.</li>
                                 <li>Checks on-call engineer roster or offers guaranteed arrival time window.</li>
@@ -111,7 +97,7 @@
 
                         <div>
                             <h4 style="font-size:1.1rem;color:var(--text-color);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
-                                <span style="color:#10b981;">📋</span> Captured Data Payload (Live CRM Example)
+                                <span style="color:#10b981;">📋</span> Illustrative Call Summary
                             </h4>
                             <div class="payload-box" style="background:#0b1120;border:1px solid #1e293b;border-radius:8px;padding:1.25rem;font-family:monospace;font-size:0.85rem;color:#94a3b8;overflow-x:auto;">
 <pre style="margin:0;color:#38bdf8;">{
@@ -128,7 +114,7 @@
 }</pre>
                             </div>
                             <div style="margin-top:1.25rem;padding:1rem;background:rgba(16,185,129,0.06);border-left:3px solid #10b981;border-radius:4px;">
-                                <p style="font-size:0.85rem;color:var(--text-color);margin:0;"><strong>Outcome:</strong> 100% of emergency inbound callers handled in real-time. Zero missed call leakage while the team is on jobs.</p>
+                                <p style="font-size:0.85rem;color:var(--text-color);margin:0;"><strong>Outcome:</strong> Capture the caller’s details and route the enquiry according to the agreed operating rules.</p>
                             </div>
                         </div>
                     </div>
@@ -175,7 +161,7 @@
 
                         <div>
                             <h4 style="font-size:1.1rem;color:var(--text-color);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
-                                <span style="color:#10b981;">📋</span> Captured Data Payload (Live CRM Example)
+                                <span style="color:#10b981;">📋</span> Illustrative Call Summary
                             </h4>
                             <div class="payload-box" style="background:#0b1120;border:1px solid #1e293b;border-radius:8px;padding:1.25rem;font-family:monospace;font-size:0.85rem;color:#94a3b8;overflow-x:auto;">
 <pre style="margin:0;color:#38bdf8;">{
@@ -190,7 +176,7 @@
 }</pre>
                             </div>
                             <div style="margin-top:1.25rem;padding:1rem;background:rgba(16,185,129,0.06);border-left:3px solid #10b981;border-radius:4px;">
-                                <p style="font-size:0.85rem;color:var(--text-color);margin:0;"><strong>Outcome:</strong> Eliminates 80% of repetitive status check interruptions so mechanics stay on the tools billing chargeable hours.</p>
+                                <p style="font-size:0.85rem;color:var(--text-color);margin:0;"><strong>Outcome:</strong> Can handle agreed routine status questions, giving the team more time to focus on workshop work.</p>
                             </div>
                         </div>
                     </div>
@@ -237,7 +223,7 @@
 
                         <div>
                             <h4 style="font-size:1.1rem;color:var(--text-color);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
-                                <span style="color:#10b981;">📋</span> Captured Data Payload (Live CRM Example)
+                                <span style="color:#10b981;">📋</span> Illustrative Call Summary
                             </h4>
                             <div class="payload-box" style="background:#0b1120;border:1px solid #1e293b;border-radius:8px;padding:1.25rem;font-family:monospace;font-size:0.85rem;color:#94a3b8;overflow-x:auto;">
 <pre style="margin:0;color:#38bdf8;">{
@@ -252,7 +238,7 @@
 }</pre>
                             </div>
                             <div style="margin-top:1.25rem;padding:1rem;background:rgba(16,185,129,0.06);border-left:3px solid #10b981;border-radius:4px;">
-                                <p style="font-size:0.85rem;color:var(--text-color);margin:0;"><strong>Outcome:</strong> Captures appointments 24 hours a day, including high-volume evening browsing periods, with zero stylist distraction.</p>
+                                <p style="font-size:0.85rem;color:var(--text-color);margin:0;"><strong>Outcome:</strong> Can capture appointment requests during agreed coverage windows, helping the team follow up without interrupting appointments.</p>
                             </div>
                         </div>
                     </div>
@@ -275,7 +261,7 @@
                                 <span style="color:#ef4444;">⚠️</span> The Operational Bottleneck
                             </h4>
                             <p style="font-size:0.95rem;line-height:1.6;color:var(--text-muted);margin-bottom:1.5rem;">
-                                Clinic receptionists balance in-person patient arrivals, payment processing, prescription paperwork, and ringing phones. Callers seeking urgent relief or initial evaluations abandon calls if put on hold for more than 45 seconds, booking with alternative local clinics.
+                                Clinic receptionists balance in-person patient arrivals, payment processing, prescription paperwork, and ringing phones. Callers seeking urgent advice may need a clear route to the appropriate member of the practice team.
                             </p>
 
                             <h4 style="font-size:1.1rem;color:var(--text-color);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
@@ -299,7 +285,7 @@
 
                         <div>
                             <h4 style="font-size:1.1rem;color:var(--text-color);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
-                                <span style="color:#10b981;">📋</span> Captured Data Payload (Live CRM Example)
+                                <span style="color:#10b981;">📋</span> Illustrative Call Summary
                             </h4>
                             <div class="payload-box" style="background:#0b1120;border:1px solid #1e293b;border-radius:8px;padding:1.25rem;font-family:monospace;font-size:0.85rem;color:#94a3b8;overflow-x:auto;">
 <pre style="margin:0;color:#38bdf8;">{
@@ -314,7 +300,7 @@
 }</pre>
                             </div>
                             <div style="margin-top:1.25rem;padding:1rem;background:rgba(16,185,129,0.06);border-left:3px solid #10b981;border-radius:4px;">
-                                <p style="font-size:0.85rem;color:var(--text-color);margin:0;"><strong>Outcome:</strong> Calm, compliant patient triage with zero hold times and zero administrative stress for clinical staff.</p>
+                                <p style="font-size:0.85rem;color:var(--text-color);margin:0;"><strong>Outcome:</strong> Calm, compliant patient triage with a clear route for routine enquiries and an agreed handoff for sensitive or urgent calls.</p>
                             </div>
                         </div>
                     </div>
@@ -361,7 +347,7 @@
 
                         <div>
                             <h4 style="font-size:1.1rem;color:var(--text-color);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
-                                <span style="color:#10b981;">📋</span> Captured Data Payload (Live CRM Example)
+                                <span style="color:#10b981;">📋</span> Illustrative Call Summary
                             </h4>
                             <div class="payload-box" style="background:#0b1120;border:1px solid #1e293b;border-radius:8px;padding:1.25rem;font-family:monospace;font-size:0.85rem;color:#94a3b8;overflow-x:auto;">
 <pre style="margin:0;color:#38bdf8;">{
@@ -423,7 +409,7 @@
 
                         <div>
                             <h4 style="font-size:1.1rem;color:var(--text-color);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
-                                <span style="color:#10b981;">📋</span> Captured Data Payload (Live CRM Example)
+                                <span style="color:#10b981;">📋</span> Illustrative Call Summary
                             </h4>
                             <div class="payload-box" style="background:#0b1120;border:1px solid #1e293b;border-radius:8px;padding:1.25rem;font-family:monospace;font-size:0.85rem;color:#94a3b8;overflow-x:auto;">
 <pre style="margin:0;color:#38bdf8;">{
@@ -489,7 +475,7 @@
                         <tr>
                             <td><strong>On-Going Maintenance</strong></td>
                             <td class="competitor-col">You must debug prompt failures yourself</td>
-                            <td class="ccm-col">100% managed by CCM engineers with weekly call audits</td>
+                            <td class="ccm-col">Managed by CCM under an agreed support plan</td>
                         </tr>
                     </tbody>
                 </table>
@@ -504,65 +490,36 @@
             <p style="max-width:700px;margin:0 auto 2rem;">We configure custom conversational architectures for any telephone-reliant business in the UK. Let's examine your call logs and design your prototype.</p>
             <div class="btn-group" style="justify-content:center;">
                 <a href="../contact/#consultation" class="btn btn-white">Schedule Custom Architecture Call</a>
-                <a href="../demo/voice-agent/" class="btn btn-outline" style="border-color:white;color:white;">Try Interactive Demo</a>
+                <a href="../demo/voice-agent/" class="btn btn-outline" style="border-color:white;color:white;">Request a tailored demo</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo">
-                    <p class="tagline">Managed AI voice agents for UK businesses. Never miss a high-value customer call again.</p>
-                    <p style="font-size:0.875rem;margin-top:1rem;color:var(--text-muted);">
-                        Direct Enquiries: <a href="mailto:Collabcreatemarketing@gmail.com" style="color:var(--accent-color);font-weight:600;">Collabcreatemarketing@gmail.com</a>
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <span class="group-title">AI Voice Services</span>
-                        <a href="../solutions/ai-voice-agents/">AI Voice Agents</a>
-                        <a href="../how-it-works/">How It Works &amp; Management</a>
-                        <a href="../industries/">Industries &amp; Use Cases</a>
-                        <a href="../demo/voice-agent/">Interactive Live Demo</a>
-                        <a href="../consultation/">Book Consultation</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Industry Blueprints</span>
-                        <a href="../industries/#trades">Trades &amp; Home Services</a>
-                        <a href="../industries/#automotive">Automotive &amp; Garages</a>
-                        <a href="../industries/#salons">Salons &amp; Clinics</a>
-                        <a href="../industries/#healthcare">Private Healthcare</a>
-                        <a href="../industries/#hospitality">Hospitality &amp; Venues</a>
-                        <a href="../industries/#professional-services">Professional Services</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Sales Partners</span>
-                        <a href="../sales-partners/">Partner Network</a>
-                        <a href="../careers/">Sales Representative Role</a>
-                        <a href="../careers/apply/">Apply Now</a>
-                        <a href="../contact/">Partner Inquiries</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Company</span>
-                        <a href="../about/">About CCM</a>
-                        <a href="../contact/">Contact Us</a>
-                        <a href="../contact/">Privacy &amp; Data Handling</a>
-                        <a href="../contact/">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Collab Create Marketing. All rights reserved. Registered UK commercial agency.</p>
-                <div class="legal-links">
-                    <a href="../contact/">Privacy &amp; Data Handling</a>
-                    <a href="../contact/">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="site-footer">
+  <div class="container">
+   <div class="footer-content">
+    <div class="footer-brand">
+     <a href="../index.html" aria-label="Collab Create Marketing home"><img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo"></a>
+     <p class="tagline">Managed AI voice agents, designed around the way your business handles calls.</p>
+     <p class="footer-contact"><a href="mailto:Collabcreatemarketing@gmail.com">Collabcreatemarketing@gmail.com</a></p>
+    </div>
+    <div class="footer-group"><h2>Explore</h2>
+     <a href="../solutions/ai-voice-agents/">AI voice agents</a>
+     <a href="../how-it-works/">How it works</a>
+     <a href="../industries/">Industries</a>
+    </div>
+    <div class="footer-group"><h2>Company</h2>
+     <a href="../about/">About CCM</a>
+     <a href="../contact/">Contact</a>
+     <a href="../demo/voice-agent/index.html">Request a demo</a>
+     <a href="../sales-partners/">Sales partners</a>
+     <a href="../careers/">Careers</a>
+    </div>
+   </div>
+   <div class="footer-bottom"><span>© 2026 Collab Create Marketing</span><a href="../contact/">Contact</a></div>
+  </div>
+ </footer>
 
     <script src="../script.js"></script>
 </body>
