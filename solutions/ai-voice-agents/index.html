@@ -31,45 +31,31 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="nav-logo">
-                <img src="../../CCM_Assets/logo.svg" alt="Collab Create Marketing">
-            </a>
-            <ul class="nav-links">
-                <li><a href="../../solutions/ai-voice-agents/" style="color:var(--accent-color);font-weight:700;">AI Voice Agents</a></li>
-                <li><a href="../../how-it-works/">How It Works</a></li>
-                <li><a href="../../industries/">Industries</a></li>
-                <li><a href="../../demo/voice-agent/">Live Demo</a></li>
-                <li class="has-dropdown">
-                    <a href="../../sales-partners/">Sales Partners</a>
-                    <ul class="dropdown">
-                        <li><a href="../../sales-partners/">Partner Opportunity</a></li>
-                        <li><a href="../../careers/">Sales Representative Role</a></li>
-                        <li><a href="../../careers/apply/">Apply Now</a></li>
-                    </ul>
-                </li>
-                <li><a href="../../about/">About</a></li>
-                <li><a href="../../contact/">Contact</a></li>
-            </ul>
-            <div class="nav-cta">
-                <a href="../../consultation/" class="btn btn-primary">Book Consultation</a>
-            </div>
-            <button class="hamburger" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <nav class="navbar" aria-label="Main navigation">
+  <div class="nav-container">
+   <a href="../../index.html" class="nav-logo" aria-label="Collab Create Marketing home"><img src="../../CCM_Assets/logo.svg" alt="Collab Create Marketing"></a>
+   <ul class="nav-links" id="primary-navigation">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../solutions/ai-voice-agents/">AI Voice Agents</a></li>
+    <li><a href="../../how-it-works/">How It Works</a></li>
+    <li><a href="../../industries/">Industries</a></li>
+    <li><a href="../../about/">About</a></li>
+    <li><a href="../../contact/">Contact</a></li>
+   </ul>
+   <div class="nav-cta"><a href="../../demo/voice-agent/index.html" class="btn btn-primary">Request a Demo</a></div>
+   <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+  </div>
+ </nav>
 
     <!-- Page B Hero: Direct Business Outcome -->
     <header class="hero-split">
         <div class="reveal">
             <span class="badge-pill"><span class="status-dot"></span> Conversational Call Architecture</span>
             <h1>Capture every call. Qualify every lead. Never miss a customer again.</h1>
-            <p class="lead">We engineer and manage custom conversational voice agents that answer your phone instantly, answer common questions, pre-qualify service requests, and sync booking data directly to your software — 24 hours a day, 7 days a week.</p>
+            <p class="lead">We engineer and manage custom conversational voice agents that handle agreed routine enquiries, capture details, support booking workflows and route calls according to your operating rules.</p>
             <div class="btn-group">
                 <a href="#consultation" class="btn btn-primary">Book a Voice Agent Consultation</a>
-                <a href="../../demo/voice-agent/" class="btn btn-outline">Test the Interactive Demo →</a>
+                <a href="../../demo/voice-agent/" class="btn btn-outline">Request a tailored demo →</a>
             </div>
         </div>
         <div class="hero-media tall reveal" style="transition-delay:0.12s;">
@@ -83,18 +69,18 @@
             <div class="reveal">
                 <span class="section-label">The Cost of Friction</span>
                 <h2>When your phone rings, seconds matter.</h2>
-                <p style="margin-bottom:1.25rem;">For service businesses, inbound calls are the highest-intent leads you will ever receive. The caller has a live problem and their payment card in hand.</p>
+                <p style="margin-bottom:1.25rem;">For service businesses, inbound calls are often carry an immediate need, so a clear and helpful response matters.</p>
                 <p style="margin-bottom:1.25rem;">Yet in most businesses, incoming calls collide with everyday operations: staff are already talking to clients, technicians are under a vehicle or on a roof, or the call comes in at 6:45pm after the shutters are down.</p>
-                <p>When an enquiry hits a busy tone or an unhelpful voicemail, that prospect calls your nearest competitor within 90 seconds. CCM solves that operational breakdown permanently.</p>
+                <p>when callers cannot reach your team, they may try another provider. A clear overflow and after-hours plan can give them a useful next step.</p>
             </div>
             <div class="feature-grid" style="grid-template-columns:1fr;gap:1.25rem;">
                 <div class="feature-tile reveal">
-                    <h3>⚡ Zero Hold Times &amp; Instant Answer</h3>
-                    <p>Every call is picked up within 2 seconds with a polite, professional, branded greeting. No callers abandoned on hold.</p>
+                    <h3>⚡ Prompt, consistent call handling</h3>
+                    <p>The agent can be configured to greet callers promptly and handle agreed enquiries without a queue.</p>
                 </div>
                 <div class="feature-tile reveal" style="transition-delay:0.08s;">
-                    <h3>🌙 24/7 Out-of-Hours &amp; Weekend Coverage</h3>
-                    <p>Capture valuable leads while your competitors are closed. Bookings, enquiries and emergency requests are logged around the clock.</p>
+                    <h3>🌙 After-hours and weekend coverage</h3>
+                    <p>Configure agreed coverage windows to capture bookings, enquiries and urgent requests when your team is unavailable.</p>
                 </div>
                 <div class="feature-tile reveal" style="transition-delay:0.16s;">
                     <h3>🔄 Concurrent Multi-Line Handling</h3>
@@ -118,7 +104,7 @@
                     <div class="card-body">
                         <div style="font-size:2rem;margin-bottom:0.75rem;">💬</div>
                         <h3>Routine Question Handling</h3>
-                        <p>Instantly answers common questions regarding your opening hours, service radius, location, pricing guidelines, accepted payment types, and parking without pulling your staff away from work.</p>
+                        <p>Answers approved routine questions regarding your opening hours, service radius, location, pricing guidelines, accepted payment types, and parking without pulling your staff away from work.</p>
                     </div>
                 </div>
 
@@ -193,7 +179,7 @@
                     <h3 style="margin-bottom:1rem;font-size:1.35rem;">Conversion-Oriented Call Sequence</h3>
                     <div class="flow-step-card" style="margin-bottom:1rem;border-left:4px solid var(--accent-color);">
                         <div style="font-size:0.8rem;text-transform:uppercase;color:var(--accent-color);font-weight:700;">Phase 1: Inbound &amp; Intent</div>
-                        <p style="margin:0;font-size:0.85rem;">Caller dials in → Natural greeting → Identifies reason for calling within first 10 seconds.</p>
+                        <p style="margin:0;font-size:0.85rem;">Caller dials in → Natural greeting → Identifies the reason for the call.</p>
                     </div>
                     <div class="flow-step-card" style="margin-bottom:1rem;border-left:4px solid var(--accent-color);">
                         <div style="font-size:0.8rem;text-transform:uppercase;color:var(--accent-color);font-weight:700;">Phase 2: Questioning &amp; Triage</div>
@@ -257,7 +243,7 @@
                         <p style="font-size:0.875rem;"><strong>Appointment Reminders:</strong> Automated call to confirm attendance for high-value clinic or trade visits, reducing costly no-shows.</p>
                     </div>
                     <div class="feature-tile">
-                        <p style="font-size:0.875rem;"><strong>Requested Callbacks:</strong> Responding to web form enquiries within 2 minutes while the buyer is still at their desk.</p>
+                        <p style="font-size:0.875rem;"><strong>Requested Callbacks:</strong> Responding to opted-in web enquiries according to the agreed callback workflow.</p>
                     </div>
                     <div class="feature-tile">
                         <p style="font-size:0.875rem;"><strong>Job Completion Follow-ups:</strong> Verifying customer satisfaction and prompting for a Google review after a service visit.</p>
@@ -337,15 +323,15 @@
                 </details>
                 <details class="faq-item reveal">
                     <summary>Do I have to change my advertised business telephone number?</summary>
-                    <p>No. You keep your current number exactly as it is. We issue a dedicated agent connection number. You then configure standard call forwarding on your line — either 24/7, overflow when busy, or out-of-hours only.</p>
+                    <p>No. You keep your current number exactly as it is. We issue a dedicated agent connection number. You then configure standard call forwarding on your line — either during agreed coverage hours, overflow when busy, or out-of-hours only.</p>
                 </details>
                 <details class="faq-item reveal">
                     <summary>Can it replace my human receptionist or staff?</summary>
-                    <p>The system is designed to support and protect your human staff, not necessarily eliminate them. In most businesses, the agent handles the 80% of calls that are repetitive, routine, or after-hours, freeing your front-of-house team to deliver exceptional service to clients in the room.</p>
+                    <p>The system is designed to support and protect your human staff, not necessarily eliminate them. In most businesses, the agent handles the routine or agreed after-hours calls, freeing your front-of-house team to deliver exceptional service to clients in the room.</p>
                 </details>
                 <details class="faq-item reveal">
                     <summary>How is caller data protected under UK GDPR?</summary>
-                    <p>All data processing, call recording, and transcription are conducted in compliance with UK GDPR and Data Protection regulations. Caller data is transmitted via encrypted channels to your approved systems, with appropriate data retention and privacy policies applied.</p>
+                    <p>Data handling, any call recording and retention settings depend on the systems selected and your requirements. We discuss the relevant caller notices and data flows during setup; your business remains responsible for its privacy information and legal obligations.</p>
                 </details>
                 <details class="faq-item reveal">
                     <summary>How much does the service cost?</summary>
@@ -479,59 +465,30 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="../../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo">
-                    <p class="tagline">Managed AI voice agents for UK businesses. Never miss a high-value customer call again.</p>
-                    <p style="font-size:0.875rem;margin-top:1rem;color:var(--text-muted);">
-                        Direct Enquiries: <a href="mailto:Collabcreatemarketing@gmail.com" style="color:var(--accent-color);font-weight:600;">Collabcreatemarketing@gmail.com</a>
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <span class="group-title">AI Voice Services</span>
-                        <a href="../../solutions/ai-voice-agents/">AI Voice Agents</a>
-                        <a href="../../how-it-works/">How It Works &amp; Management</a>
-                        <a href="../../industries/">Industries &amp; Use Cases</a>
-                        <a href="../../demo/voice-agent/">Interactive Live Demo</a>
-                        <a href="../../consultation/">Book Consultation</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Industry Blueprints</span>
-                        <a href="../../industries/#trades">Trades &amp; Home Services</a>
-                        <a href="../../industries/#automotive">Automotive &amp; Garages</a>
-                        <a href="../../industries/#salons">Salons &amp; Clinics</a>
-                        <a href="../../industries/#healthcare">Private Healthcare</a>
-                        <a href="../../industries/#hospitality">Hospitality &amp; Venues</a>
-                        <a href="../../industries/#professional-services">Professional Services</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Sales Partners</span>
-                        <a href="../../sales-partners/">Partner Network</a>
-                        <a href="../../careers/">Sales Representative Role</a>
-                        <a href="../../careers/apply/">Apply Now</a>
-                        <a href="../../contact/">Partner Inquiries</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Company</span>
-                        <a href="../../about/">About CCM</a>
-                        <a href="../../contact/">Contact Us</a>
-                        <a href="../../contact/">Privacy &amp; Data Handling</a>
-                        <a href="../../contact/">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Collab Create Marketing. All rights reserved. Registered UK commercial agency.</p>
-                <div class="legal-links">
-                    <a href="../../contact/">Privacy &amp; Data Handling</a>
-                    <a href="../../contact/">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="site-footer">
+  <div class="container">
+   <div class="footer-content">
+    <div class="footer-brand">
+     <a href="../../index.html" aria-label="Collab Create Marketing home"><img src="../../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo"></a>
+     <p class="tagline">Managed AI voice agents, designed around the way your business handles calls.</p>
+     <p class="footer-contact"><a href="mailto:Collabcreatemarketing@gmail.com">Collabcreatemarketing@gmail.com</a></p>
+    </div>
+    <div class="footer-group"><h2>Explore</h2>
+     <a href="../../solutions/ai-voice-agents/">AI voice agents</a>
+     <a href="../../how-it-works/">How it works</a>
+     <a href="../../industries/">Industries</a>
+    </div>
+    <div class="footer-group"><h2>Company</h2>
+     <a href="../../about/">About CCM</a>
+     <a href="../../contact/">Contact</a>
+     <a href="../../demo/voice-agent/index.html">Request a demo</a>
+     <a href="../../sales-partners/">Sales partners</a>
+     <a href="../../careers/">Careers</a>
+    </div>
+   </div>
+   <div class="footer-bottom"><span>© 2026 Collab Create Marketing</span><a href="../../contact/">Contact</a></div>
+  </div>
+ </footer>
 
     <script src="../../script.js"></script>
 </body>
