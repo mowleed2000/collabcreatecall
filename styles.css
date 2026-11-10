@@ -1851,17 +1851,15 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .has-mobile-cta { padding-bottom: 4.5rem; }
   .hero-stats-grid {
     grid-template-columns: 1fr;
   }
   .industry-grid {
     grid-template-columns: 1fr;
   }
-  .sticky-mobile-cta-bar {
+  .sticky-mobile-cta-bar.is-visible {
     display: block;
-  }
-  body {
-    padding-bottom: 4.5rem;
   }
 }
 
