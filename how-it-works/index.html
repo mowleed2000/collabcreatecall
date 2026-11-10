@@ -16,35 +16,21 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing">
-            </a>
-            <ul class="nav-links">
-                <li><a href="../solutions/ai-voice-agents/">AI Voice Agents</a></li>
-                <li><a href="../how-it-works/" style="color:var(--accent-color);font-weight:700;">How It Works</a></li>
-                <li><a href="../industries/">Industries</a></li>
-                <li><a href="../demo/voice-agent/">Live Demo</a></li>
-                <li class="has-dropdown">
-                    <a href="../sales-partners/">Sales Partners</a>
-                    <ul class="dropdown">
-                        <li><a href="../sales-partners/">Partner Opportunity</a></li>
-                        <li><a href="../careers/">Sales Representative Role</a></li>
-                        <li><a href="../careers/apply/">Apply Now</a></li>
-                    </ul>
-                </li>
-                <li><a href="../about/">About</a></li>
-                <li><a href="../contact/">Contact</a></li>
-            </ul>
-            <div class="nav-cta">
-                <a href="../consultation/" class="btn btn-primary">Book Consultation</a>
-            </div>
-            <button class="hamburger" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <nav class="navbar" aria-label="Main navigation">
+  <div class="nav-container">
+   <a href="../index.html" class="nav-logo" aria-label="Collab Create Marketing home"><img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing"></a>
+   <ul class="nav-links" id="primary-navigation">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../solutions/ai-voice-agents/">AI Voice Agents</a></li>
+    <li><a href="../how-it-works/">How It Works</a></li>
+    <li><a href="../industries/">Industries</a></li>
+    <li><a href="../about/">About</a></li>
+    <li><a href="../contact/">Contact</a></li>
+   </ul>
+   <div class="nav-cta"><a href="../demo/voice-agent/index.html" class="btn btn-primary">Request a Demo</a></div>
+   <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+  </div>
+ </nav>
 
     <!-- Page Header -->
     <header class="page-hero" style="padding-bottom:3rem;">
@@ -54,7 +40,7 @@
             <p class="lead" style="margin-left:auto;margin-right:auto;">Anyone can purchase access to an AI API. Making it work reliably for a live commercial business requires meticulous architecture, rigorous testing, clean integration, and active management.</p>
             <div class="btn-group" style="justify-content:center;margin-top:2rem;">
                 <a href="../contact/#consultation" class="btn btn-primary">Schedule Discovery Call</a>
-                <a href="../demo/voice-agent/" class="btn btn-outline">Explore the Demo →</a>
+                <a href="../demo/voice-agent/" class="btn btn-outline">Request a tailored demo →</a>
             </div>
         </div>
         <div class="container reveal" style="margin-top:3rem;">
@@ -97,7 +83,7 @@
                 <div class="step reveal" style="transition-delay:0.24s;">
                     <span class="step-num" style="font-size:1.5rem;font-weight:800;color:var(--accent-color);">04</span>
                     <h3>Rigorous Test</h3>
-                    <p>We stress-test the agent with hundreds of simulated test calls: background noise, interruptions, ambiguous questions, edge cases, and emergency handoffs before any customer speaks to it.</p>
+                    <p>We stress-test the agent with representative caller paths, interruptions, ambiguous questions, edge cases and escalation routes before any customer speaks to it.</p>
                 </div>
 
                 <!-- Stage 5 -->
@@ -170,68 +156,39 @@
     <section class="band-accent">
         <div class="container reveal" style="text-align:center;">
             <h2>Ready to see how a managed system works for your business?</h2>
-            <p style="max-width:700px;margin:0 auto 2rem;">Book a 20-minute discovery consultation to discuss your call volumes and test our interactive prototype.</p>
+            <p style="max-width:700px;margin:0 auto 2rem;">Request a tailored demo to discuss your call volumes and enquiry handling.</p>
             <div class="btn-group" style="justify-content:center;">
                 <a href="../contact/#consultation" class="btn btn-white">Book Discovery Consultation</a>
-                <a href="../demo/voice-agent/" class="btn btn-outline" style="border-color:white;color:white;">Try Interactive Demo</a>
+                <a href="../demo/voice-agent/" class="btn btn-outline" style="border-color:white;color:white;">Request a tailored demo</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo">
-                    <p class="tagline">Managed AI voice agents for UK businesses. Never miss a high-value customer call again.</p>
-                    <p style="font-size:0.875rem;margin-top:1rem;color:var(--text-muted);">
-                        Direct Enquiries: <a href="mailto:Collabcreatemarketing@gmail.com" style="color:var(--accent-color);font-weight:600;">Collabcreatemarketing@gmail.com</a>
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <span class="group-title">AI Voice Services</span>
-                        <a href="../solutions/ai-voice-agents/">AI Voice Agents</a>
-                        <a href="../how-it-works/">How It Works &amp; Management</a>
-                        <a href="../industries/">Industries &amp; Use Cases</a>
-                        <a href="../demo/voice-agent/">Interactive Live Demo</a>
-                        <a href="../consultation/">Book Consultation</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Industry Blueprints</span>
-                        <a href="../industries/#trades">Trades &amp; Home Services</a>
-                        <a href="../industries/#automotive">Automotive &amp; Garages</a>
-                        <a href="../industries/#salons">Salons &amp; Clinics</a>
-                        <a href="../industries/#healthcare">Private Healthcare</a>
-                        <a href="../industries/#hospitality">Hospitality &amp; Venues</a>
-                        <a href="../industries/#professional-services">Professional Services</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Sales Partners</span>
-                        <a href="../sales-partners/">Partner Network</a>
-                        <a href="../careers/">Sales Representative Role</a>
-                        <a href="../careers/apply/">Apply Now</a>
-                        <a href="../contact/">Partner Inquiries</a>
-                    </div>
-                    <div class="link-group">
-                        <span class="group-title">Company</span>
-                        <a href="../about/">About CCM</a>
-                        <a href="../contact/">Contact Us</a>
-                        <a href="../contact/">Privacy &amp; Data Handling</a>
-                        <a href="../contact/">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Collab Create Marketing. All rights reserved. Registered UK commercial agency.</p>
-                <div class="legal-links">
-                    <a href="../contact/">Privacy &amp; Data Handling</a>
-                    <a href="../contact/">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="site-footer">
+  <div class="container">
+   <div class="footer-content">
+    <div class="footer-brand">
+     <a href="../index.html" aria-label="Collab Create Marketing home"><img src="../CCM_Assets/logo.svg" alt="Collab Create Marketing" class="logo"></a>
+     <p class="tagline">Managed AI voice agents, designed around the way your business handles calls.</p>
+     <p class="footer-contact"><a href="mailto:Collabcreatemarketing@gmail.com">Collabcreatemarketing@gmail.com</a></p>
+    </div>
+    <div class="footer-group"><h2>Explore</h2>
+     <a href="../solutions/ai-voice-agents/">AI voice agents</a>
+     <a href="../how-it-works/">How it works</a>
+     <a href="../industries/">Industries</a>
+    </div>
+    <div class="footer-group"><h2>Company</h2>
+     <a href="../about/">About CCM</a>
+     <a href="../contact/">Contact</a>
+     <a href="../demo/voice-agent/index.html">Request a demo</a>
+     <a href="../sales-partners/">Sales partners</a>
+     <a href="../careers/">Careers</a>
+    </div>
+   </div>
+   <div class="footer-bottom"><span>© 2026 Collab Create Marketing</span><a href="../contact/">Contact</a></div>
+  </div>
+ </footer>
 
     <script src="../script.js"></script>
 </body>
